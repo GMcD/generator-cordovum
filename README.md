@@ -1,0 +1,4 @@
+cordovum
+========
+
+Yeoman Cordova Generator
