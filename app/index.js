@@ -47,6 +47,14 @@ CordovumGenerator.prototype.app = function app() {
 
   this.copy('_package.json', 'package.json');
   this.copy('_bower.json', 'bower.json');
+
+  this.copy('_app.html', 'app.html');
+  this.copy('_jasmine.html', 'jasmine.html');
+  this.copy('_require.app.js', 'require.app.js');
+  this.copy('_require.jasmine.js', 'require.jasmine.js');
+
+  this.copy('_gruntfile.js', 'gruntfile.js');
+
 };
 
 CordovumGenerator.prototype.projectfiles = function projectfiles() {
