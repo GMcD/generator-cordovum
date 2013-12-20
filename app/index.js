@@ -1,0 +1,55 @@
+'use strict';
+var util = require('util');
+var path = require('path');
+var yeoman = require('yeoman-generator');
+
+
+var CordovumGenerator = module.exports = function CordovumGenerator(args, options, config) {
+  yeoman.generators.Base.apply(this, arguments);
+
+  this.on('end', function () {
+    this.installDependencies({ skipInstall: options['skip-install'] });
+  });
+
+  this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+};
+
+util.inherits(CordovumGenerator, yeoman.generators.Base);
+
+CordovumGenerator.prototype.askFor = function askFor() {
+  var cb = this.async();
+
+  // have Yeoman greet the user.
+  console.log(this.yeoman);
+
+  var prompts = [ { name: 'appName', message: 'What would you like to call your App? '},
+                  { name: 'appDescription', message: 'Short application description : '},
+                  { name: 'appAuthor', message: 'App Author email', default: 'GMcD <gary.macdonald@projectscapa.com>'}];
+
+  this.prompt(prompts, function (props) {
+    this.appName = props.appName;
+    this.appDescription = props.appDescription;
+    this.appAuthor = props.appAuthor;
+
+    cb();
+  }.bind(this));
+};
+
+CordovumGenerator.prototype.app = function app() {
+  this.mkdir('app');
+  this.mkdir('app/css');
+  this.mkdir('app/fonts');
+  this.mkdir('app/img');
+  this.mkdir('app/js');
+  this.mkdir('app/scss');
+  this.mkdir('app/tpl');
+  this.mkdir('app/tests');
+
+  this.copy('_package.json', 'package.json');
+  this.copy('_bower.json', 'bower.json');
+};
+
+CordovumGenerator.prototype.projectfiles = function projectfiles() {
+  this.copy('gitignore', '.gitignore');
+  this.copy('jshintrc', '.jshintrc');
+};
