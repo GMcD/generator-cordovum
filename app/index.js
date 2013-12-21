@@ -48,15 +48,15 @@ CordovumGenerator.prototype.app = function app() {
   this.mkdir('app/tpl');
   this.mkdir('app/tests');
 
-  this.copy('_package.json', 'package.json');
-  this.copy('_bower.json', 'bower.json');
+  this.copy('_package.json', 'app/package.json');
+  this.copy('_bower.json', 'app/bower.json');
 
-  this.copy('_app.html', 'app.html');
-  this.copy('_jasmine.html', 'jasmine.html');
-  this.copy('_require.app.js', 'require.app.js');
-  this.copy('_require.jasmine.js', 'require.jasmine.js');
+  this.copy('_app.html', 'app/app.html');
+  this.copy('_jasmine.html', 'app/jasmine.html');
+  this.copy('_require.app.js', 'app/require.app.js');
+  this.copy('_require.jasmine.js', 'app/require.jasmine.js');
 
-  this.copy('_gruntfile.js', 'gruntfile.js');
+  this.copy('_gruntfile.js', 'app/gruntfile.js');
 
 };
 
