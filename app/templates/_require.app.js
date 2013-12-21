@@ -13,14 +13,14 @@ require.config({
     jwidget         : '/bower_components/jquery-ui/ui/jquery.ui.widget',
     jdraggable      : '/bower_components/jquery-ui/ui/jquery.ui.draggable',
     jdroppable      : '/bower_components/jquery-ui/ui/jquery.ui.droppable',
-    jtouch          : 'js/libs/jquery.ui.touch-punch',
-    jsv             : 'js/libs/jsv',
-    jsonform        : 'js/libs/jsonform',
-    jscroll         : 'js/libs/jquery.jscrollpane',
-    touchy          : 'js/libs/jquery.touchy',
-    home            : 'js/home',
-    router          : 'js/router',
-    app             : 'js/app'
+    jtouch          : '/app/js/libs/jquery.ui.touch-punch',
+    jsv             : '/app/js/libs/jsv',
+    jsonform        : '/app/js/libs/jsonform',
+    jscroll         : '/app/js/libs/jquery.jscrollpane',
+    touchy          : '/app/js/libs/jquery.touchy',
+    home            : '/app/js/home',
+    router          : '/app/js/router',
+    app             : '/app/js/app'
   },
   shim: {
     underscore: {

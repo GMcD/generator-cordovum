@@ -1,8 +1,8 @@
 require.config({
   urlArgs: 'cb=' + Math.random(),
   paths: {
-    jasmine         : 'bower_components/jasmine/lib/jasmine-core/jasmine',
-    'jasmine-html'  : 'bower_components/jasmine/lib/jasmine-core/jasmine-html',
+    jasmine         : '/bower_components/jasmine/lib/jasmine-core/jasmine',
+    'jasmine-html'  : '/bower_components/jasmine/lib/jasmine-core/jasmine-html',
   },
   shim: {
     jasmine: {
