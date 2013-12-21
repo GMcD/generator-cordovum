@@ -33,7 +33,7 @@ module.exports = function (grunt) {
         }
       },
       files: {
-        src: [ 'js/*.js' ]
+        src: [ app + '/js/*.js' ]
       },
     },
 
@@ -132,12 +132,12 @@ module.exports = function (grunt) {
     sass: {
         dist: {
             files: {
-                'css/app.css' : 'scss/app.scss'
+                app + '/css/app.css' : app + '/scss/app.scss'
             }
         }
     },
     watch: {
-        files: ['scss/*'],
+        files: [app + '/scss/*'],
         tasks: ['sass'],
     },
 });
