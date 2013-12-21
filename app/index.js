@@ -22,12 +22,15 @@ CordovumGenerator.prototype.askFor = function askFor() {
   // have Yeoman greet the user.
   console.log(this.yeoman);
 
-  var prompts = [ { name: 'appName', message: 'What would you like to call your App? '},
-                  { name: 'appDescription', message: 'Short application description : '},
-                  { name: 'appAuthor', message: 'App Author email', default: 'GMcD <gary.macdonald@projectscapa.com>'}];
+  var prompts = [ { name: 'appName', message: 'What would you like to call your App? ', default: 'TAG'},
+                  { name: 'appBundle', message: 'Application Bundle Identifier : ', default: 'com.projectscapa.tag'},
+                  { name: 'appDescription', message: 'Short application description : ', default: 'Travel Advisory Group'},
+                  { name: 'appAuthor', message: 'App Author email', default: 'GMcD <gary.macdonald@projectscapa.com>'}
+                ];
 
   this.prompt(prompts, function (props) {
     this.appName = props.appName;
+    this.appBundle = props.appBundle;
     this.appDescription = props.appDescription;
     this.appAuthor = props.appAuthor;
 

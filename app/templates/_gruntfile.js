@@ -41,6 +41,8 @@ module.exports = function (grunt) {
                 { src: 'js/**', dest: '../www/', expand: true },
                 { src: 'tpl/**', dest: '../www/', expand: true },
                 { src: 'img/**', dest: '../www/', expand: true },
+                { src: 'fonts/**', dest: '../www/', expand: true },
+                { src: 'config.xml', dest: '../www/', expand: true },
                 { src: 'app.html', dest: '../www/', expand: true },
                 { src: 'require.app.js', dest: '../www/', expand: true },
                 { src: 'bower_components/requirejs/require.js', dest: '../www/', expand: true },
@@ -54,6 +56,7 @@ module.exports = function (grunt) {
                 { src: 'bower_components/bootstrap-sass/js/modal.js', dest: '../www/', expand: true },
                 { src: 'bower_components/requirejs-text/text.js', dest: '../www/', expand: true },
                 { src: 'bower_components/modernizr/modernizr.js', dest: '../www/', expand: true },
+                { src: 'bower_components/momentjs/moment.js', dest: '../www/', expand: true },
                 { src: 'bower_components/jquery-ui/ui/jquery.ui.core.js', dest: '../www/', expand: true },
                 { src: 'bower_components/jquery-ui/ui/jquery.ui.mouse.js', dest: '../www/', expand: true },
                 { src: 'bower_components/jquery-ui/ui/jquery.ui.widget.js', dest: '../www/', expand: true },
@@ -63,6 +66,11 @@ module.exports = function (grunt) {
                 { src: 'bower_components/font-awesome/fonts/*', dest: '../www/', expand: true },
                 { src: 'bower_components/jscrollpane/style/jquery.jscrollpane.css', dest: '../www/', expand: true },
                 { src: 'bower_components/jscrollpane/themes/lozenge/style/jquery.jscrollpane.lozenge.css', dest: '../www/', expand: true },
+                { src: 'jasmine.html', dest: '../www/', expand: true },
+                { src: 'require.jasmine2.js', dest: '../www/', expand: true },
+                { src: 'tests/**', dest: '../www/', expand: true },
+                { src: 'bower_components/jasmine/lib/jasmine-core/*.js', dest: '../www/', expand: true },
+                { src: 'bower_components/jasmine/lib/jasmine-core/jasmine.css', dest: '../www/', expand: true },
             ]
         }
     },
@@ -82,8 +90,8 @@ module.exports = function (grunt) {
             options: {
                 path: '../',
                 command: 'create',
-                id: 'com.projectscapa.app',
-                name: 'App'
+                id: '<%= appBundle %>',
+                name: '<%= appName %>'
             }
         },
         add_platforms: {
