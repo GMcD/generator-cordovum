@@ -132,7 +132,7 @@ module.exports = function (grunt) {
     sass: {
         dist: {
             files: {
-                app + '/css/app.css' : app + '/scss/app.scss'
+                '/<%= _.slugify(appName) %>/css/app.css' : app + '/scss/app.scss'
             }
         }
     },
