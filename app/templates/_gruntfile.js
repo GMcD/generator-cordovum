@@ -1,4 +1,8 @@
 module.exports = function (grunt) {
+
+    var app = '<%= _.slugify(appName) %>';
+    var appwww = app + '/www/';
+
     grunt.initConfig({
 
     jshint: {
@@ -37,40 +41,40 @@ module.exports = function (grunt) {
     copy: {
         main: {
             files: [
-                { src: 'css/*', dest: '../www/', expand: true },
-                { src: 'js/**', dest: '../www/', expand: true },
-                { src: 'tpl/**', dest: '../www/', expand: true },
-                { src: 'img/**', dest: '../www/', expand: true },
-                { src: 'fonts/**', dest: '../www/', expand: true },
-                { src: 'config.xml', dest: '../www/', expand: true },
-                { src: 'app.html', dest: '../www/', expand: true },
-                { src: 'require.app.js', dest: '../www/', expand: true },
-                { src: 'bower_components/requirejs/require.js', dest: '../www/', expand: true },
-                { src: 'bower_components/requirejs-text/text.js', dest: '../www/', expand: true },
-                { src: 'bower_components/backbone/backbone.js', dest: '../www/', expand: true },
-                { src: 'bower_components/jquery/jquery.js', dest: '../www/', expand: true },
-                { src: 'bower_components/underscore/underscore.js', dest: '../www/', expand: true },
-                { src: 'bower_components/fastclick/lib/fastclick.js', dest: '../www/', expand: true },
-                { src: 'bower_components/backbone/backbone.js', dest: '../www/', expand: true },
-                { src: 'bower_components/backbone.localstorage/backbone.localStorage.js', dest: '../www/', expand: true },
-                { src: 'bower_components/bootstrap-sass/js/modal.js', dest: '../www/', expand: true },
-                { src: 'bower_components/requirejs-text/text.js', dest: '../www/', expand: true },
-                { src: 'bower_components/modernizr/modernizr.js', dest: '../www/', expand: true },
-                { src: 'bower_components/momentjs/moment.js', dest: '../www/', expand: true },
-                { src: 'bower_components/jquery-ui/ui/jquery.ui.core.js', dest: '../www/', expand: true },
-                { src: 'bower_components/jquery-ui/ui/jquery.ui.mouse.js', dest: '../www/', expand: true },
-                { src: 'bower_components/jquery-ui/ui/jquery.ui.widget.js', dest: '../www/', expand: true },
-                { src: 'bower_components/jquery-ui/ui/jquery.ui.draggable.js', dest: '../www/', expand: true },
-                { src: 'bower_components/jquery-ui/ui/jquery.ui.droppable.js', dest: '../www/', expand: true },
-                { src: 'bower_components/font-awesome/css/font-awesome.css', dest: '../www/', expand: true },
-                { src: 'bower_components/font-awesome/fonts/*', dest: '../www/', expand: true },
-                { src: 'bower_components/jscrollpane/style/jquery.jscrollpane.css', dest: '../www/', expand: true },
-                { src: 'bower_components/jscrollpane/themes/lozenge/style/jquery.jscrollpane.lozenge.css', dest: '../www/', expand: true },
-                { src: 'jasmine.html', dest: '../www/', expand: true },
-                { src: 'require.jasmine2.js', dest: '../www/', expand: true },
-                { src: 'tests/**', dest: '../www/', expand: true },
-                { src: 'bower_components/jasmine/lib/jasmine-core/*.js', dest: '../www/', expand: true },
-                { src: 'bower_components/jasmine/lib/jasmine-core/jasmine.css', dest: '../www/', expand: true },
+                { src: app + '/css/*', dest: appwww, expand: true },
+                { src: app + '/js/**', dest: appwww, expand: true },
+                { src: app + '/tpl/**', dest: appwww, expand: true },
+                { src: app + '/img/**', dest: appwww, expand: true },
+                { src: app + '/fonts/**', dest: appwww, expand: true },
+                { src: app + '/config.xml', dest: appwww, expand: true },
+                { src: app + '/app.html', dest: appwww, expand: true },
+                { src: app + '/require.app.js', dest: appwww, expand: true },
+                { src: 'bower_components/requirejs/require.js', dest: appwww, expand: true },
+                { src: 'bower_components/requirejs-text/text.js', dest: appwww, expand: true },
+                { src: 'bower_components/backbone/backbone.js', dest: appwww, expand: true },
+                { src: 'bower_components/jquery/jquery.js', dest: appwww, expand: true },
+                { src: 'bower_components/underscore/underscore.js', dest: appwww, expand: true },
+                { src: 'bower_components/fastclick/lib/fastclick.js', dest: appwww, expand: true },
+                { src: 'bower_components/backbone/backbone.js', dest: appwww, expand: true },
+                { src: 'bower_components/backbone.localstorage/backbone.localStorage.js', dest: appwww, expand: true },
+                { src: 'bower_components/bootstrap-sass/js/modal.js', dest: appwww, expand: true },
+                { src: 'bower_components/requirejs-text/text.js', dest: appwww, expand: true },
+                { src: 'bower_components/modernizr/modernizr.js', dest: appwww, expand: true },
+                { src: 'bower_components/momentjs/moment.js', dest: appwww, expand: true },
+                { src: 'bower_components/jquery-ui/ui/jquery.ui.core.js', dest: appwww, expand: true },
+                { src: 'bower_components/jquery-ui/ui/jquery.ui.mouse.js', dest: appwww, expand: true },
+                { src: 'bower_components/jquery-ui/ui/jquery.ui.widget.js', dest: appwww, expand: true },
+                { src: 'bower_components/jquery-ui/ui/jquery.ui.draggable.js', dest: appwww, expand: true },
+                { src: 'bower_components/jquery-ui/ui/jquery.ui.droppable.js', dest: appwww, expand: true },
+                { src: 'bower_components/font-awesome/css/font-awesome.css', dest: appwww, expand: true },
+                { src: 'bower_components/font-awesome/fonts/*', dest: appwww, expand: true },
+                { src: 'bower_components/jscrollpane/style/jquery.jscrollpane.css', dest: appwww, expand: true },
+                { src: 'bower_components/jscrollpane/themes/lozenge/style/jquery.jscrollpane.lozenge.css', dest: appwww, expand: true },
+                { src: 'bower_components/jasmine/lib/jasmine-core/*.js', dest: appwww, expand: true },
+                { src: 'bower_components/jasmine/lib/jasmine-core/jasmine.css', dest: appwww, expand: true },
+                { src: app + '/jasmine.html', dest: appwww, expand: true },
+                { src: app + '/require.jasmine.js', dest: appwww, expand: true },
+                { src: app + '/tests/**', dest: appwww, expand: true },
             ]
         }
     },
@@ -79,7 +83,7 @@ module.exports = function (grunt) {
      */
     cordovacli: {
         options: {
-            path: '../www/'
+            path: appwww
         },        
         cordova: {
             options: {
@@ -88,10 +92,10 @@ module.exports = function (grunt) {
         },
         create: {
             options: {
-                path: '../',
+                path: app,
                 command: 'create',
                 id: '<%= appBundle %>',
-                name: '<%= appName %>'
+                name: app
             }
         },
         add_platforms: {

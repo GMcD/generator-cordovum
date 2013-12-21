@@ -42,6 +42,7 @@ CordovumGenerator.prototype.module = function app() {
 
   this.copy('_package.json', 'package.json');
   this.copy('_bower.json', 'bower.json');
+  this.copy('_gruntfile.js', 'gruntfile.js');
 
 };
 
@@ -64,7 +65,5 @@ CordovumGenerator.prototype.app = function app() {
   this.copy('_jasmine.html', 'app/jasmine.html');
   this.copy('_require.app.js', 'app/require.app.js');
   this.copy('_require.jasmine.js', 'app/require.jasmine.js');
-
-  this.copy('_gruntfile.js', 'app/gruntfile.js');
 
 };
