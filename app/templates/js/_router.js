@@ -32,7 +32,7 @@ define(
          */
         home: function() {
             console.log('Home!');     
-            var view = new Home.HomeView();
+            var view = new Home.View();
         },
 
     });

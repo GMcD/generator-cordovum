@@ -1,4 +1,4 @@
-define([ 'jquery', 'underscore', 'backbone', 'text!app/tpl/homeTemplate.html'], 
+define([ 'jquery', 'underscore', 'backbone', 'text!/app/tpl/homeTemplate.html'], 
     function( $, _, Backbone, homeTemplate ) {
 
     /*
@@ -23,6 +23,6 @@ define([ 'jquery', 'underscore', 'backbone', 'text!app/tpl/homeTemplate.html'],
         },
     });
 
-    return { HomeView : HomeView };
+    return { View : HomeView };
 
 });

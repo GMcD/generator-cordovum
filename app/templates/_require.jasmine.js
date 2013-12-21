@@ -30,7 +30,7 @@ require(['underscore', 'jquery', 'jasmine-html'], function(_, $, jasmine){
  
   var specs = [];
  
-  specs.push('tests/Home');
+  specs.push('tests/home');
  
   $(function(){
     require(specs, function(){

@@ -53,6 +53,8 @@ CordovumGenerator.prototype.projectfiles = function projectfiles() {
 
 CordovumGenerator.prototype.app = function app() {
   this.mkdir('app');
+  this.copy('_server.js', 'server.js')
+
   this.mkdir('app/css');
   this.mkdir('app/fonts');
   this.mkdir('app/img');
