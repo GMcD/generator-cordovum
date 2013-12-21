@@ -61,6 +61,13 @@ CordovumGenerator.prototype.app = function app() {
   this.copy('js/_app.js', 'app/js/app.js')
   this.copy('js/_router.js', 'app/js/router.js')
   this.copy('js/_home.js', 'app/js/home.js')
+
+  this.mkdir('app/js/libs');
+  this.copy('js/libs/_jquery.jscrollpane.js', 'app/js/libs/jquery.jscrollpane.js')
+  this.copy('js/libs/_jquery.touchy.js', 'app/js/libs/jquery.touchy.js')
+  this.copy('js/libs/_jquery.ui.touch-punch.js', 'app/js/libs/jquery.ui.touch-punch.js')
+  this.copy('js/libs/_jsonform.js', 'app/js/libs/jsonform.js')
+  this.copy('js/libs/_jsv.js', 'app/js/libs/jsv.js')
   
   this.mkdir('app/scss');
   this.copy('scss/__home.scss', 'app/scss/_home.scss')
