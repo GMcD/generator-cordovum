@@ -33,7 +33,7 @@ module.exports = function (grunt) {
         }
       },
       files: {
-        src: [ app + '/js/*.js' ]
+        src: [ 'app/js/*.js' ]
       },
     },
 
@@ -118,12 +118,12 @@ module.exports = function (grunt) {
         all: {
             src: [ 'jquery','underscore', 'home' ],
             options: {
-                keepRunner: false,
-                specs: ['tests/*.js'],
+                keepRunner: true,
+                specs: ['app/tests/*.js'],
                 host : 'http://127.0.0.1:8000/',
                 template: require('grunt-template-jasmine-requirejs'),
                 templateOptions: {
-                    requireConfigFile: [ 'require.app.js', 'require.jasmine.js' ]
+                    requireConfigFile: [ 'app/require.app.js', 'app/require.jasmine.js' ]
                 }
             }
         }
