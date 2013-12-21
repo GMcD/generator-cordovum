@@ -21,6 +21,7 @@ var CordovumGenerator = module.exports = function CordovumGenerator(args, option
   this.on('dependenciesInstalled', function() {
       this.spawnCommand('grunt', ['setup']);
       this.spawnCommand('grunt', ['default']);
+      this.spawnCommand('grunt', ['cordova']);
   });
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));

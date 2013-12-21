@@ -44,7 +44,7 @@ define(['jquery','underscore','text','modernizr','fastclick','home'], function()
          * App and Cordova Loaded - Start App Home Page
          */
           onDeviceReady: function() {
-              var view = new Home.HomeView();
+              var view = new Home.View();
           },
       };
 
@@ -55,7 +55,9 @@ define(['jquery','underscore','text','modernizr','fastclick','home'], function()
 
             FastClick.attach(document.body);
 
-            $('body').on('touchmove', function(e){
+            $(document).on('touchmove', false);
+
+            $('html,body').on('touchmove', function(e){
                 var id = selector(e.target);
                 console.log("Touched : " + id );
                 e.preventDefault();
