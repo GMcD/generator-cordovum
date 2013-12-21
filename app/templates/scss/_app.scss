@@ -1,0 +1,18 @@
+@import "../bower_components/bootstrap-sass/lib/bootstrap";
+@import "../bower_components/bourbon/app/assets/stylesheets/_bourbon";
+
+@import "_home";
+
+/* Variables */
+
+/* Bootstrap navbar footer zIndex is ~1000, so for above this : */
+$zOffset: 2000;
+
+/* Standard HTML Elements */
+body {
+	padding-top:40px;
+}
+
+div#stage {
+	margin-top: 40px;
+}
