@@ -8,7 +8,19 @@ var CordovumGenerator = module.exports = function CordovumGenerator(args, option
   yeoman.generators.Base.apply(this, arguments);
 
   this.on('end', function () {
-    this.installDependencies({ skipInstall: options['skip-install'] });
+    this.installDependencies({ 
+          skipInstall: options['skip-install'],
+          callback: function() {
+                // Emit a new event - dependencies installed
+                this.emit('dependenciesInstalled');
+            }.bind(this)
+    });
+  });
+
+  // Now you can bind to the dependencies installed event
+  this.on('dependenciesInstalled', function() {
+      this.spawnCommand('grunt', ['setup']);
+      this.spawnCommand('grunt', ['default']);
   });
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
