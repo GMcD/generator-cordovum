@@ -15,27 +15,29 @@ require.config({
   }
 });
 
-require(['underscore', 'jquery', 'jasmine-html'], function(_, $, jasmine){
- 
-  var jasmineEnv = jasmine.getEnv();
-  jasmineEnv.updateInterval = 1000;
- 
-  var htmlReporter = new jasmine.HtmlReporter();
- 
-  jasmineEnv.addReporter(htmlReporter);
- 
-  jasmineEnv.specFilter = function(spec) {
-    return htmlReporter.specFilter(spec);
-  };
- 
-  var specs = [];
- 
-  specs.push('tests/home');
- 
-  $(function(){
-    require(specs, function(){
-      jasmineEnv.execute();
+require(['require.app'], function(){
+  require(['jasmine', 'jasmine-html'], function(jasmine){
+   
+    var jasmineEnv = jasmine.getEnv();
+    jasmineEnv.updateInterval = 1000;
+   
+    var htmlReporter = new jasmine.HtmlReporter();
+   
+    jasmineEnv.addReporter(htmlReporter);
+   
+    jasmineEnv.specFilter = function(spec) {
+      return htmlReporter.specFilter(spec);
+    };
+   
+    var specs = [];
+   
+    specs.push('tests/home');
+   
+    $(function(){
+      require(specs, function(){
+        jasmineEnv.execute();
+      });
     });
+   
   });
- 
 });
