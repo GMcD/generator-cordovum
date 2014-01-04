@@ -1,7 +1,8 @@
 module.exports = function (grunt) {
 
-    var app = '<%= _.slugify(appName) %>';
-    var appwww = app + '/www/';
+    var app = 'app/';
+    var appname = '<%= _.slugify(appName) %>';
+    var appwww = appname + '/www/';
 
     grunt.initConfig({
 
@@ -41,14 +42,14 @@ module.exports = function (grunt) {
     copy: {
         main: {
             files: [
-                { src: app + '/css/*', dest: appwww, expand: true },
-                { src: app + '/js/**', dest: appwww, expand: true },
-                { src: app + '/tpl/**', dest: appwww, expand: true },
-                { src: app + '/img/**', dest: appwww, expand: true },
-                { src: app + '/fonts/**', dest: appwww, expand: true },
-                { src: app + '/config.xml', dest: appwww, expand: true },
-                { src: app + '/app.html', dest: appwww, expand: true },
-                { src: app + '/require.app.js', dest: appwww, expand: true },
+                { src: app + 'css/*', cwd: app, dest: appwww, expand: true },
+                { src: app + 'js/**', cwd: app, dest: appwww, expand: true },
+                { src: app + 'tpl/**', cwd: app, dest: appwww, expand: true },
+                { src: app + 'img/**', cwd: app, dest: appwww, expand: true },
+                { src: app + 'fonts/**', cwd: app, dest: appwww, expand: true },
+                { src: app + 'config.xml', cwd: app, dest: appwww, expand: true },
+                { src: app + 'app.html', cwd: app, dest: appwww, expand: true },
+                { src: app + 'require.app.js', cwd: app, dest: appwww, expand: true },
                 { src: 'bower_components/requirejs/require.js', dest: appwww, expand: true },
                 { src: 'bower_components/requirejs-text/text.js', dest: appwww, expand: true },
                 { src: 'bower_components/backbone/backbone.js', dest: appwww, expand: true },
@@ -72,9 +73,9 @@ module.exports = function (grunt) {
                 { src: 'bower_components/jscrollpane/themes/lozenge/style/jquery.jscrollpane.lozenge.css', dest: appwww, expand: true },
                 { src: 'bower_components/jasmine/lib/jasmine-core/*.js', dest: appwww, expand: true },
                 { src: 'bower_components/jasmine/lib/jasmine-core/jasmine.css', dest: appwww, expand: true },
-                { src: app + '/jasmine.html', dest: appwww, expand: true },
-                { src: app + '/require.jasmine.js', dest: appwww, expand: true },
-                { src: app + '/tests/**', dest: appwww, expand: true },
+                { src: app + 'jasmine.html', cwd: app, dest: appwww, expand: true },
+                { src: app + 'require.jasmine.js', cwd: app, dest: appwww, expand: true },
+                { src: app + 'tests/**', cwd: app, dest: appwww, expand: true },
             ]
         }
     },

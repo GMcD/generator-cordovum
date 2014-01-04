@@ -1,4 +1,4 @@
-define([ 'jquery', 'underscore', 'backbone', 'text!/app/tpl/homeTemplate.html'], 
+define([ 'jquery', 'underscore', 'backbone', 'text!../www/app/tpl/homeTemplate.html'], 
     function( $, _, Backbone, homeTemplate ) {
 
     /*

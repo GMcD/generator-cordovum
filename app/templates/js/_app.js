@@ -35,6 +35,11 @@ define(['jquery','underscore','text','modernizr','fastclick','home'], function()
                   require(['cordova'], function(){
                         console.log("Loaded iOS Cordova...");
                   });
+            } else if (this.options.android){
+                  console.log("Loading Cordova for Android!");
+                  require(['cordova'], function(){
+                        console.log("Loaded Android Cordova...");
+                  });
             } else {
                   console.log("Firing Device Ready on : " + navigator.userAgent);
                   this.onDeviceReady();

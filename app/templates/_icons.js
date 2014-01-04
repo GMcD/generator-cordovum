@@ -8,7 +8,7 @@ var iosIconFolder = iosImgFolder + '/icons';
 var iosSplashFolder = iosImgFolder + '/splash';
 
 var iconPng = imgFolder + 'imp.png';
-var splashPng = imgFolder + 'impFace.png';
+var splashPng = imgFolder + 'impFace702.png';
 
 /* fs.mkdirSync(iosImgFolder); */
 
@@ -41,5 +41,20 @@ spawn('convert', [splashPng, '-gravity', 'center', '-extent', '1536x2008', iosSp
 spawn('convert', [splashPng, '-gravity', 'center', '-extent',  '768x1004', iosSplashFolder + '/Default-Portrait~ipad.png']);
 spawn('convert', [splashPng, '-gravity', 'center', '-extent',   '640x960', iosSplashFolder + '/Default@2x~iphone.png']);
 spawn('convert', [splashPng, '-gravity', 'center', '-extent',   '320x480', iosSplashFolder + '/Default~iphone.png']);
+
+/* ================================================ */
+
+var androidImgFolder = imgFolder + '/android';
+
+
+/* Make Folders */
+/* fs.mkdirSync(androidImgFolder); */
+
+/* Android Icon Images */
+im.resize({ srcPath: iconPng, dstPath: androidImgFolder + '/drawable/icon.png', width: 96 });
+im.resize({ srcPath: iconPng, dstPath: androidImgFolder + '/drawable-hdpi/icon.png', width: 72 });
+im.resize({ srcPath: iconPng, dstPath: androidImgFolder + '/drawable-ldpi/icon.png', width: 36 });
+im.resize({ srcPath: iconPng, dstPath: androidImgFolder + '/drawable-mdpi/icon.png', width: 48 });
+im.resize({ srcPath: iconPng, dstPath: androidImgFolder + '/drawable-xhdpi/icon.png', width: 96 });
 
 
