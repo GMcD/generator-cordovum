@@ -82,6 +82,15 @@ module.exports = function (grunt) {
             ]
         }
     },
+    /* Rename Config File */
+    rename: {
+        config: {
+            files: [
+                { src: '<%= _.slugify(appName) %>/platforms/android/res/xml/config.android.xml', dest: '<%= _.slugify(appName) %>/platforms/android/res/xml/config.xml' },
+                { src: '<%= _.slugify(appName) %>/platforms/ios/<%= _.slugify(appName) %>/config.ios.xml', dest: '<%= _.slugify(appName) %>/platforms/ios/<%= _.slugify(appName) %>/config.xml' },
+            ]
+        }
+    },
     /*
      * Build Out Cordova Instance
      */
@@ -103,7 +112,7 @@ module.exports = function (grunt) {
             options: {
                 path: '<%= _.slugify(appName) %>',
                 command: 'create',
-                id: '<%= _.slugify(appBundle) %>',
+                id: '<%= appBundle %>',
                 name: '<%= _.slugify(appName) %>'
             }
         },

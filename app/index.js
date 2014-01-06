@@ -19,9 +19,9 @@ var CordovumGenerator = module.exports = function CordovumGenerator(args, option
 
   // Now you can bind to the dependencies installed event
   this.on('dependenciesInstalled', function() {
-//      this.spawnCommand('grunt', ['setup']);
-//      this.spawnCommand('grunt', ['default']);
-//      this.spawnCommand('grunt', ['cordova']);
+      this.spawnCommand('grunt', ['setup']);
+      this.spawnCommand('grunt', ['cordova']);
+      this.spawnCommand('grunt', ['default']);
   });
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
@@ -44,7 +44,7 @@ CordovumGenerator.prototype.askFor = function askFor() {
   this.prompt(prompts, function (props) {
     this.appName = props.appName;
     this.appUrl = props.appUrl;
-    this.appBundle = props.appUrl + '.' + props.appName;
+    this.appBundle = props.appUrl + '.' + _.slugify(props.appName);
     this.appDescription = props.appDescription;
     this.appAuthor = props.appAuthor;
 
