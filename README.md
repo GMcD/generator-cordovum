@@ -25,6 +25,8 @@ Setup an empty repository for your app, change into the folder, and initiate the
 $ mkdir app; cd app; git init .; yo cordovum; git add .; git commit -m "My New App from Yeoman"
 ```
 
+Start <code>grunt watch</code> at the project root to generate assets for XCode or Eclipse sessions.
+Run <code>nodemon ./server.js</code> at the project root for Chrome sessions. Run <code>grunt cordovacli:build</code> to generate the APK and IPA builds.
 
 ### Getting To Know Cordovum
 

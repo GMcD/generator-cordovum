@@ -49,13 +49,15 @@ IOS/www/
 .Spotlight-V100
 .Trashes
 
-app/bower_components/
-app/node_modules/
-app/css/
-docs/
-app/.sass-cache/
-app/.grunt/
-platforms/ios/platform_www/
-platforms/ios/www/
-www/
+# Grunt and Friends
+.sass-cache/
+.grunt/
+_SpecRunner.html
 
+bower_components/
+node_modules/
+app/css/
+<%= _.slugify(appName) %>/platforms/android/platform_www/
+<%= _.slugify(appName) %>/platforms/ios/platform_www/
+<%= _.slugify(appName) %>/platforms/ios/www/
+<%= _.slugify(appName) %>/www
