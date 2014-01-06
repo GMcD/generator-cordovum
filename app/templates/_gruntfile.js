@@ -1,8 +1,6 @@
 module.exports = function (grunt) {
 
-    var app = 'app/';
-    var appname = '<%= _.slugify(appName) %>';
-    var appwww = appname + '/www/';
+    var appwww = '<%= _.slugify(appName) %>/www/';
 
     grunt.initConfig({
 
@@ -103,10 +101,10 @@ module.exports = function (grunt) {
         },
         create: {
             options: {
-                path: app,
+                path: '<%= _.slugify(appName) %>',
                 command: 'create',
                 id: '<%= appBundle %>',
-                name: app
+                name: '<%= _.slugify(appName) %>'
             }
         },
         add_platforms: {
