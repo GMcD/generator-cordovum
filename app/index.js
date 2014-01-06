@@ -26,7 +26,7 @@ var CordovumGenerator = module.exports = function CordovumGenerator(args, option
   });
 
   this.on('platformsSetup', function() {
-      this.spawnCommand('grunt', ['cordova', 'build']);
+      this.spawnCommand('grunt', ['cordova', 'cordovacli:build']);
       this.spawnCommand('grunt', ['default']);
   });
 
@@ -44,7 +44,7 @@ CordovumGenerator.prototype.askFor = function askFor() {
   var prompts = [ { name: 'appName', message: 'What would you like to call your App? ', default: 'TAG'},
                   { name: 'appUrl', message: 'Application Url Identifier : ', default: 'com.projectscapa'},
                   { name: 'appDescription', message: 'Short application description : ', default: 'Travel Advisory Group'},
-                  { name: 'appAuthor', message: 'App Author email', default: 'GMcD <gary.macdonald@projectscapa.com>'}
+                  { name: 'appAuthor', message: 'App Author email', default: 'gary.macdonald@projectscapa.com'}
                 ];
 
   this.prompt(prompts, function (props) {

@@ -37,6 +37,6 @@ define(
 
     });
 
-    return Router;
+    return { Router : Router };
 
 });
