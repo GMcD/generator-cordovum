@@ -1,7 +1,6 @@
 'use strict';
 var util = require('util');
 var path = require('path');
-var _ = require('underscore');
 var yeoman = require('yeoman-generator');
 
 
@@ -45,7 +44,7 @@ CordovumGenerator.prototype.askFor = function askFor() {
   this.prompt(prompts, function (props) {
     this.appName = props.appName;
     this.appUrl = props.appUrl;
-    this.appBundle = props.appUrl + '.' + _.slugify(props.appName);
+    this.appBundle = props.appUrl + '.' + props.appName.toLowerCase();
     this.appDescription = props.appDescription;
     this.appAuthor = props.appAuthor;
 
