@@ -19,6 +19,7 @@ require.config({
     jsonform        : 'app/js/libs/jsonform',
     jscroll         : 'app/js/libs/jquery.jscrollpane',
     touchy          : 'app/js/libs/jquery.touchy',
+    tpl             : 'app/tpl',
     home            : 'app/js/home',
     router          : 'app/js/router',
     app             : 'app/js/app'
