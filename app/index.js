@@ -19,14 +19,15 @@ var CordovumGenerator = module.exports = function CordovumGenerator(args, option
 
   // Now you can bind to the dependencies installed event
   this.on('dependenciesInstalled', function() {
-      this.spawnCommand('grunt', ['setup'], function() {
+      this.spawnCommand('grunt', ['setup'])
+            .on('close', function() {
                 this.emit('platformsSetup');
             }.bind(this));
   });
 
   this.on('platformsSetup', function() {
+      this.spawnCommand('grunt', ['cordova', 'build']);
       this.spawnCommand('grunt', ['default']);
-      this.spawnCommand('grunt', ['cordova']);
   });
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
