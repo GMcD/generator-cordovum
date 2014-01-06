@@ -1,6 +1,7 @@
 'use strict';
 var util = require('util');
 var path = require('path');
+var _ = require('underscore');
 var yeoman = require('yeoman-generator');
 
 
