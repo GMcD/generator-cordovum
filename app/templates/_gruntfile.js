@@ -116,18 +116,11 @@ module.exports = function (grunt) {
                 name: '<%= _.slugify(appName) %>'
             }
         },
-        add_platform_ios: {
+        add_platforms: {
             options: {
                 command: 'platform',
                 action: 'add',
-                platforms: ['ios']
-            }
-        },
-        add_platform_droid: {
-            options: {
-                command: 'platform',
-                action: 'add',
-                platforms: ['android']
+                platforms: ['ios', 'android']
             }
         },
     },
@@ -181,6 +174,6 @@ grunt.registerTask('default', [ 'jshint', 'sass', 'connect', 'jasmine', 'copy' ]
 /* Task to build device packages */
 grunt.registerTask('cordova', [ 'sass', 'copy', 'cordovacli:cordova', 'copy:config', 'rename:config' ]);
 /* Initial Setup Task - Create Cordova App and add ios and android */
-grunt.registerTask('setup', [ 'cordovacli:create', 'cordovacli:add_platform_ios', 'cordovacli:add_platform_droid' ]);
+grunt.registerTask('setup', [ 'cordovacli:create', 'cordovacli:add_platforms' ]);
 
 };
