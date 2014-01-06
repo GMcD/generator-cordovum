@@ -1,8 +1,8 @@
 /* App */
-define(['jquery','underscore','text','modernizr','fastclick','home'], function(){
+define(['jquery','underscore','modernizr','fastclick','router'], function(){
     /* Loads the require modules and away */
-    require(['jquery','underscore','text','modernizr','fastclick','home'], 
-	function($, _, text, Modernizr, FastClick, Home){
+    require(['jquery','underscore','modernizr','fastclick','router'], 
+	function($, _, Modernizr, FastClick, Router){
 
       /* Get Url Parameters - Expect Platform at least */
       function getUrlParameters(){
@@ -49,7 +49,7 @@ define(['jquery','underscore','text','modernizr','fastclick','home'], function()
          * App and Cordova Loaded - Start App Home Page
          */
           onDeviceReady: function() {
-              var view = new Home.View();
+              var router = new Router.Router();
           },
       };
 

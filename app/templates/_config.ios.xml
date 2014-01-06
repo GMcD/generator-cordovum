@@ -4,10 +4,10 @@
     <description>
         <%= appDescription %>
     </description>
-    <author email="<%= appAuthor %>" href="http://cordova.io">
+    <author email="<%= appAuthor %>" href="<%= appUrl %>">
         <%= appAuthor %>
     </author>
-    <content src="app.html" />
+    <content src="app/app.html?platform=ios" />
     <access origin="*" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />

@@ -36,14 +36,15 @@ CordovumGenerator.prototype.askFor = function askFor() {
   console.log(this.yeoman);
 
   var prompts = [ { name: 'appName', message: 'What would you like to call your App? ', default: 'TAG'},
-                  { name: 'appBundle', message: 'Application Bundle Identifier : ', default: 'com.projectscapa.tag'},
+                  { name: 'appUrl', message: 'Application Url Identifier : ', default: 'com.projectscapa'},
                   { name: 'appDescription', message: 'Short application description : ', default: 'Travel Advisory Group'},
                   { name: 'appAuthor', message: 'App Author email', default: 'GMcD <gary.macdonald@projectscapa.com>'}
                 ];
 
   this.prompt(prompts, function (props) {
     this.appName = props.appName;
-    this.appBundle = props.appBundle;
+    this.appUrl = props.appUrl;
+    this.appBundle = props.appUrl + '.' + props.appName;
     this.appDescription = props.appDescription;
     this.appAuthor = props.appAuthor;
 
@@ -68,7 +69,8 @@ CordovumGenerator.prototype.app = function app() {
   this.mkdir('app');
   this.copy('_server.js', 'server.js')
   this.copy('_icons.js', 'icons.js')
-  this.copy('_config.xml', 'config.xml')
+  this.copy('_config.android.xml', 'config.android.xml')
+  this.copy('_config.ios.xml', 'config.ios.xml')
 
   this.mkdir('app/css');
   this.mkdir('app/fonts');

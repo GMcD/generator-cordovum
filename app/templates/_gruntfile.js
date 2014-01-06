@@ -42,14 +42,13 @@ module.exports = function (grunt) {
     copy: {
         main: {
             files: [
-                { src: app + 'css/*', cwd: app, dest: appwww, expand: true },
-                { src: app + 'js/**', cwd: app, dest: appwww, expand: true },
-                { src: app + 'tpl/**', cwd: app, dest: appwww, expand: true },
-                { src: app + 'img/**', cwd: app, dest: appwww, expand: true },
-                { src: app + 'fonts/**', cwd: app, dest: appwww, expand: true },
-                { src: app + 'config.xml', cwd: app, dest: appwww, expand: true },
-                { src: app + 'app.html', cwd: app, dest: appwww, expand: true },
-                { src: app + 'require.app.js', cwd: app, dest: appwww, expand: true },
+                { src: 'app/css/*', dest: appwww, expand: true },
+                { src: 'app/js/**', dest: appwww, expand: true },
+                { src: 'app/tpl/**', dest: appwww, expand: true },
+                { src: 'app/img/**', dest: appwww, expand: true },
+                { src: 'app/fonts/**', dest: appwww, expand: true },
+                { src: 'app/app.html', dest: appwww, expand: true },
+                { src: 'app/require.app.js', dest: appwww, expand: true },
                 { src: 'bower_components/requirejs/require.js', dest: appwww, expand: true },
                 { src: 'bower_components/requirejs-text/text.js', dest: appwww, expand: true },
                 { src: 'bower_components/backbone/backbone.js', dest: appwww, expand: true },
@@ -73,9 +72,15 @@ module.exports = function (grunt) {
                 { src: 'bower_components/jscrollpane/themes/lozenge/style/jquery.jscrollpane.lozenge.css', dest: appwww, expand: true },
                 { src: 'bower_components/jasmine/lib/jasmine-core/*.js', dest: appwww, expand: true },
                 { src: 'bower_components/jasmine/lib/jasmine-core/jasmine.css', dest: appwww, expand: true },
-                { src: app + 'jasmine.html', cwd: app, dest: appwww, expand: true },
-                { src: app + 'require.jasmine.js', cwd: app, dest: appwww, expand: true },
-                { src: app + 'tests/**', cwd: app, dest: appwww, expand: true },
+                { src: 'app/jasmine.html', dest: appwww, expand: true },
+                { src: 'app/require.jasmine.js', dest: appwww, expand: true },
+                { src: 'app/tests/**', dest: appwww, expand: true },
+            ]
+        },
+        config: {
+            files: [
+                { src: 'config.android.xml', dest: <%= _.slugify(appName) %> + '/platforms/android/res/xml/' },
+                { src: 'config.ios.xml', dest: <%= _.slugify(appName) %> + '/platforms/ios/' + <%= _.slugify(appName) %> + '/' },
             ]
         }
     },
@@ -88,7 +93,12 @@ module.exports = function (grunt) {
         },        
         cordova: {
             options: {
-                command: ['prepare', 'build'],
+                command: ['prepare'],
+            }
+        },
+        build: {
+            options: {
+                command: ['build'],
             }
         },
         create: {
@@ -138,8 +148,8 @@ module.exports = function (grunt) {
         }
     },
     watch: {
-        files: ['app/scss/*'],
-        tasks: ['sass'],
+        files: ['app/**'],
+        tasks: ['cordova'],
     },
 });
 
@@ -148,13 +158,14 @@ grunt.loadNpmTasks('grunt-contrib-connect');
 grunt.loadNpmTasks('grunt-contrib-jasmine');
 grunt.loadNpmTasks('grunt-contrib-sass');
 grunt.loadNpmTasks('grunt-contrib-copy');
+grunt.loadNpmTasks('grunt-contrib-rename');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-cordovacli');
 
 /* SPA build test and push task */
 grunt.registerTask('default', [ 'jshint', 'sass', 'connect', 'jasmine', 'copy' ]);
 /* Task to build device packages */
-grunt.registerTask('cordova', [ 'sass', 'copy', 'cordovacli:cordova' ]);
+grunt.registerTask('cordova', [ 'sass', 'copy', 'cordovacli:cordova', 'copy:config', 'rename:config' ]);
 /* Initial Setup Task - Create Cordova App and add ios and android */
 grunt.registerTask('setup', [ 'cordovacli:create', 'cordovacli:add_platforms' ]);
 
