@@ -19,10 +19,10 @@ To install generator-cordovum from npm, run:
 $ npm install -g generator-cordovum
 ```
 
-Finally, initiate the generator:
+Make a folder for your app, change into it, and initiate the generator, setup the platforms and build:
 
 ```
-$ yo cordovum
+$ mkdir app; cd app; yo cordovum; grunt setup; grunt cordova; grunt build
 ```
 
 ### Getting To Know Cordovum

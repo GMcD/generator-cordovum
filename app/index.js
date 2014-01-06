@@ -52,7 +52,7 @@ CordovumGenerator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
-CordovumGenerator.prototype.module = function app() {
+CordovumGenerator.prototype.module = function module() {
 
   this.copy('_package.json', 'package.json');
   this.copy('_bower.json', 'bower.json');

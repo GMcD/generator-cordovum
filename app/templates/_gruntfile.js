@@ -79,8 +79,8 @@ module.exports = function (grunt) {
         },
         config: {
             files: [
-                { src: 'config.android.xml', dest: <%= _.slugify(appName) %> + '/platforms/android/res/xml/' },
-                { src: 'config.ios.xml', dest: <%= _.slugify(appName) %> + '/platforms/ios/' + <%= _.slugify(appName) %> + '/' },
+                { src: 'config.android.xml', dest: '<%= _.slugify(appName) %>/platforms/android/res/xml/' },
+                { src: 'config.ios.xml', dest: '<%= _.slugify(appName) %>/platforms/ios/<%= _.slugify(appName) %>/' },
             ]
         }
     },
