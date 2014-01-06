@@ -103,7 +103,7 @@ module.exports = function (grunt) {
             options: {
                 path: '<%= _.slugify(appName) %>',
                 command: 'create',
-                id: '<%= appBundle %>',
+                id: '<%= _.slugify(appBundle) %>',
                 name: '<%= _.slugify(appName) %>'
             }
         },
@@ -111,7 +111,7 @@ module.exports = function (grunt) {
             options: {
                 command: 'platform',
                 action: 'add',
-                platforms: ['ios', 'android']
+                platforms: ['android','ios']
             }
         },
     },
