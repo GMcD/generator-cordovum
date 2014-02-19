@@ -37,23 +37,12 @@
     background-color: $lpb-color;
 }
 
-.panel-heading span:last-child {
-    margin-left: -70px;
-}
-.panel-heading {
-    border-top-left-radius: none !important;
-    border-top-right-radius: none !important;
-}
-
 /* for panel heading */
 .fixed {
   position : fixed;
   top : 0px;
   z-index : 100;
   width: 100%;
-}
-.scroll {
-    margin-top: 50px;
 }
 
 /* Non Parameterised/Calculated Bootstrap Thingummies - which cannot be overridden nicely without hacking BS */
