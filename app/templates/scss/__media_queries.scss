@@ -52,5 +52,5 @@ $ltablet : 5;
  * Small to Medium, iPad and Larger - 768 - upwards
  * -------------------------------------------------- */
 @media (min-width: $screen-md-min + 1) {
-    @include styling(lstablet);
+    @include styling($ltablet);
 }

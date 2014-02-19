@@ -27,6 +27,13 @@
     position: relative;
 }
 
+/* High Palette, Foreground Colour - e.g dark canary on canary */
+.btn-bhp {
+    @include button-variant($hpb-color, $hph-color, $hph-color);
+    border: 1px solid $hpb-color !important;
+    position: relative;
+}
+
 /* Background Palette, Text colour - e.g brown with white on top */
 .btn-bbg {
     @include button-variant($bpt-color, $bpf-color, $bpt-color);
@@ -48,8 +55,13 @@
 .btn-square:hover {
   color: $fpt-color;
 }
-/* Button 
-button .fa {
+
+/*
+ * Button Styling z-index for Button Images
+ */
+$z-img: 1;
+
+button .fa, div .fa {
     float: left;
     z-index: $z-img;
 }

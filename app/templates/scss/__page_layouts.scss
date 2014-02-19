@@ -14,15 +14,24 @@
     border: none !important;
 }
 
+/* Foreground Panel */
 .panel-fg {
     @include panel-variant($fpb-color, $fpt-color, $fpb-color, $fpt-color);
     background-color: $bpf-color;
 }
 
+/* Background Panel */
+.panel-bg {
+    @include panel-variant($bpb-color, $bpt-color, $bpb-color, $bpt-color);
+    background-color: $bpb-color;
+}
+
+/* Highlight Panel */
 .panel-hi {
     @include panel-variant($fpf-color, $fpt-color, $fpf-color, $fpt-color);
 }
 
+/* Lowlight Panel */
 .panel-lp {
     @include panel-variant($bpf-color, $fpt-color, $bpf-color, $fpt-color);
     background-color: $lpb-color;

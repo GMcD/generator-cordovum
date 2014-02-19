@@ -3,10 +3,7 @@
  * Four Palettes with Five colours are defined here.
  */
 @import "_colours";
-/*
- * There should be no Bootstrap or HTML colours after this
- */
-@import "_mixins";
+
 /*
  * Use Bootstrap mixins mostly
  */
@@ -16,12 +13,6 @@
  */
 @import "bower_components/bourbon/app/assets/stylesheets/addons/_prefixer.scss";
 @import "bower_components/bourbon/app/assets/stylesheets/css3/_transform.scss";
-
-/*
- * z-index
- */
-// Button Images
-$z-img: 1;
 
 /* ==================================================== */
 /* Text and Textarea Inputs                             */

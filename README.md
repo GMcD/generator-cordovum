@@ -34,6 +34,13 @@ $ mkdir app; cd app; git init .; yo cordovum; git add .; git commit -m "My New A
 Start <code>grunt watch</code> at the project root to generate assets for XCode or Eclipse sessions.
 Run <code>nodemon ./server.js</code> at the project root for Chrome sessions. Run <code>grunt cordovacli:build</code> to generate the APK and IPA builds.
 
+# Project Configuration
+
+The iOS project file will need Target Properties set for 
+  * supported orientations (ALL), 
+  * View Controller-based status bar appearance (NO), and 
+  * status bar initially hidden (YES).
+
 ### Getting To Know Cordovum
 
 If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).

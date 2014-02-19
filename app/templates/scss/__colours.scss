@@ -1,8 +1,22 @@
-/* Constants used as Variables, to be deprecated, as no colours should be
-	mentioned out of this file */
+/* ------------------------------------------------------------------------ */
+/* Standard colour constants defined here as sass variables.				*/
+/* Subsequently the App Palette colours are enumerated.						*/
+/* Then, the Palettes are made up from the App colours.						*/
+/* All colours should be mentioned outside of this file by variable name. 	*/
+/* ------------------------------------------------------------------------ */
+
 $white: white;
 $red: red;
 $purple: #3D3B5E;
+/* 50 Shades of Grey */
+$lightgrey: #D4D4D4;
+$darkgrey: #343434;
+
+.white {
+	color: $white !important;
+}
+
+/* App Palette Colours */
 
 $canary: #ead85d;
 $canary-dark: #cfbf50;
@@ -20,15 +34,6 @@ $grey-header: #343a48;
 $grey-dot: #d6d6d6;
 $blue-dot: #48defe;
 
-/* 50 Shades of Grey */
-$lightgrey: #D4D4D4;
-$darkgrey: #343434;
-
-.white {
-	color: $white !important;
-}
-
-/* Tag Brand Palette Colours */
 /* Are abstracted - Panel's for example do not use the brand named variables */
 /* Possible Direction - 
 	Five Colours in Palette - Foreground, Background, Highlight, Text and Danger
@@ -54,9 +59,15 @@ $bpb-color: $white;
 $bph-color: $fph-color;
 
 /* Lowlight Palette */
-$lpt-color: $darkgrey;
-$lpf-color: $darkgrey;
-$lpb-color: $lightgrey;
-$lph-color: $lightorange;
+$lpt-color: $salmon-dark;
+$lpf-color: $salmon-dark;
+$lpb-color: $salmon;
+$lph-color: $salmon;
+
+/* Highlight Palette */
+$hpt-color: $canary-dark;
+$hpf-color: $canary-dark;
+$hpb-color: $canary;
+$hph-color: $canary;
 
 
