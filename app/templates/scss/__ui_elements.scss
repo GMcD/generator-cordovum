@@ -10,15 +10,15 @@
 /* Note there are 7 of these, allowing offsets in the elements */
 
 /* Button Font Sizes */
-$large-font-sizes:          ( 22px, 24px, 26px, 30px, 34px, 36px, 42px );
+$large-font-sizes:          ( 22px, 22px, 26px, 30px, 34px, 36px, 42px );
 /* Icon Font Sizes */
-$icon-font-sizes:           ( 24px, 26px, 28px, 32px, 36px, 38px, 44px );
+$icon-font-sizes:           ( 24px, 24px, 28px, 32px, 36px, 38px, 44px );
 /* Text Font Sizes */
 $text-font-sizes:           ( 14px, 16px, 18px, 24px, 24px, 24px, 28px );
 /* Padding Top and Bottom */
-$paddings-top:              (  2px,  3px,  4px,  6px,  8px, 10px, 12px );
+$paddings-top:              (  3px,  4px,  5px,  6px,  8px, 10px, 12px );
 /* Padding Left and Right */
-$paddings-left:             (  2px,  4px,  6px,  8px, 10px, 12px, 14px );
+$paddings-left:             (  3px,  5px,  6px,  8px, 10px, 12px, 14px );
 /* Border Radius */
 $borders-radius:            (  2px,  3px,  4px,  6px,  8px,  8px, 10px );
 /* Margin Top and Bottom */
@@ -28,7 +28,7 @@ $margins-left:              (  2px,  3px,  4px,  5px,  6px,  7px,  8px );
 /* Gutters */
 $gutter-widths:             (  8px, 10px, 14px, 20px, 30px, 30px, 40px );
 /* Lozenge Widths */
-$lozenge-widths:            ( 80px, 100px, 120px, 140px, 140px, 140px, 140px );
+$lozenge-widths:            ( 80px, 100px, 120px, 140px, 160px, 180px, 200px );
 
 /* Small Square Button */
 @mixin pill-button($size){
@@ -40,7 +40,7 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 140px, 140px, 140px );
 /* Square Button */
 @mixin square-button($size){
   font-size: nth($large-font-sizes, $size + 1);
-  padding: nth($paddings-top, $size + 1) nth($paddings-left, $size);
+  padding: nth($paddings-top, $size + 1) nth($paddings-left, $size + 1);
   border-radius: nth($borders-radius, $size + 1) !important;
   margin: nth($margins-top, $size + 1);
   .fa {
@@ -49,13 +49,14 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 140px, 140px, 140px );
 }
 @mixin lozenge-button($size){
   font-size: nth($large-font-sizes, $size);
+  padding: nth($paddings-top, $size) nth($paddings-left, $size);
   width: nth($lozenge-widths, $size + 1);
   margin: nth($margins-top, $size + 1);
 }
 @mixin panel-button($size){
   font-size: nth($large-font-sizes, $size);
   width: 95%;
-  height: nth($large-font-sizes, $size + 1);
+  height: nth($large-font-sizes, $size + 1) + 2 * nth($margins-top, $size) + nth($paddings-top, $size);
   margin: nth($margins-top, $size + 2) nth($margins-left, $size + 2);
   padding: nth($paddings-top, $size);
 }
@@ -78,6 +79,7 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 140px, 140px, 140px );
 @mixin panel-body($size) {
   padding: nth($paddings-top, $size) nth($paddings-left, $size) !important;
 }
+/* Extra Space above Nav Icon */
 @mixin panel-heading($size) {
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
@@ -87,15 +89,15 @@ $lozenge-widths:            ( 80px, 100px, 120px, 140px, 140px, 140px, 140px );
     padding-left: nth($paddings-top, $size);
   }
   span:last-child {
-    margin-left: -70px;
+    margin-left: - (nth($large-font-sizes, $size) + nth($paddings-left, $size) );
   }
-}
-/* Height of fixed panel header - $line-height + $margin * 2 + $border-bottom */
-@mixin scroll($size){
-  margin-top: floor($line-height-base + 2 * nth($margins-top, $size) + 1);
 }
 @mixin guttering($size) {
   margin: nth($margins-top, $size) nth($margins-left, $size);
+}
+/* Height of fixed panel header - $line-height + $margin * 2 + $border-bottom */
+@mixin scroll($size){
+  margin-top: floor(nth($large-font-sizes, $size) * $line-height-base) + 2 * nth($margins-top, $size) + 1;
 }
 
 @mixin details-table($size) {

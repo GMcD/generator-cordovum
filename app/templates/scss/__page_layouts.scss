@@ -33,7 +33,7 @@
 
 /* Lowlight Panel */
 .panel-lp {
-    @include panel-variant($bpf-color, $fpt-color, $bpf-color, $fpt-color);
+    @include panel-variant($fpt-color, $fpt-color, $bpf-color, $fpt-color);
     background-color: $lpb-color;
 }
 
