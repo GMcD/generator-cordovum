@@ -12,7 +12,20 @@
 
 </head>
 <body>
-    <div id="stage"></div>
+    <div id="stage" class="guttering"></div>
+    <!-- The spinner needs a container element -->
+    <span class="indicator spinner normal bars-9">
+        <!-- And a set of bars to draw, in this case 9 as .bars-9 requires -->
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </span>
     <script data-main="require.app" src="../bower_components/requirejs/require.js"></script>
 </body>
 </html>

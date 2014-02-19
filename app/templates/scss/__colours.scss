@@ -1,7 +1,62 @@
-/* Brand Colours */
-/* Should be abstracted - Panel's for example do not use the brand named variables */
+/* Constants used as Variables, to be deprecated, as no colours should be
+	mentioned out of this file */
+$white: white;
+$red: red;
+$purple: #3D3B5E;
 
+$canary: #ead85d;
+$canary-dark: #cfbf50;
+$lime: #68d472;
+$lime-dark: #53b45c;
+$turquoise: #4eb7cd;
+$turquoise-dark: #3d95a7;
+$cobalt: #496bd8;
+$cobalt-dark: #3857b9;
+$plum: #9f88df;
+$plum-dark: #755eb3;
+$salmon: #ff6b6b;
+$salmon-dark: #dc5a5a;
+$grey-header: #343a48;
+$grey-dot: #d6d6d6;
+$blue-dot: #48defe;
+
+/* 50 Shades of Grey */
 $lightgrey: #D4D4D4;
-$brown: #555555;
-$orange: #F57E20;
-$lightorange: #FDB03A;
+$darkgrey: #343434;
+
+.white {
+	color: $white !important;
+}
+
+/* Tag Brand Palette Colours */
+/* Are abstracted - Panel's for example do not use the brand named variables */
+/* Possible Direction - 
+	Five Colours in Palette - Foreground, Background, Highlight, Text and Danger
+	Four Palettes 			- Foreground, Background, Highlight and Lowlight
+
+	Class Prefix composed of three letters, identifying the role of the colour in the palette.
+		 Palette Initial, 'p', Colour Initial, -color 
+	In BNF ;-)
+		 [f|b|h|l]p[f|b|h|t|d]-color
+*/
+
+/* Foreground Palette */
+$fpt-color: $white;
+$fpf-color: $plum;
+$fpb-color: $plum-dark;
+$fph-color: $plum;
+$fpd-color: $red;
+
+/* Background Palette */
+$bpt-color: $white;
+$bpf-color: $plum-dark;
+$bpb-color: $white;
+$bph-color: $fph-color;
+
+/* Lowlight Palette */
+$lpt-color: $darkgrey;
+$lpf-color: $darkgrey;
+$lpb-color: $lightgrey;
+$lph-color: $lightorange;
+
+

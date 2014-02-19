@@ -96,7 +96,14 @@ CordovumGenerator.prototype.app = function app() {
   
   this.mkdir('app/scss');
   this.copy('scss/__home.scss', 'app/scss/_home.scss')
-  this.copy('scss/_app.scss', 'app/scss/app.scss')
+  this.copy('scss/__colours.scss', 'app/scss/_colours.scss')
+  this.copy('scss/__variables.custom.scss', 'app/scss/_variables.custom.scss')
+  this.copy('scss/__html_inputs.scss', 'app/scss/_html_inputs.scss')
+  this.copy('scss/__ui_elements.scss', 'app/scss/_ui_elements.scss')
+  this.copy('scss/__form_buttons.scss', 'app/scss/_form_buttons.scss')
+  this.copy('scss/__table_columns.scss', 'app/scss/_table_columns.scss')
+  this.copy('scss/__page_layouts.scss', 'app/scss/_page_layouts.scss')
+  this.copy('scss/__media_queries.scss', 'app/scss/_media_queries.scss')
   
   this.mkdir('app/tpl');
   this.copy('tpl/_homeTemplate.html', 'app/tpl/homeTemplate.html')

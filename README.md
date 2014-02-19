@@ -13,13 +13,18 @@ $ npm install -g yo
 
 ### Yeoman Cordovum Generator
 
-To install generator-cordovum from npm, run:
+To locally update generator-cordovum from git, run:
+
+```
+$ cd /usr/local/lib/node_modules/generator-cordovum; sudo git pull
+
+Later, once in the npm registery, install generator-cordovum by running:
 
 ```
 $ npm install -g generator-cordovum
 ```
 
-Setup an empty repository for your app, change into the folder, and initiate the generator.
+Setup an __empty__ folder (and repository) for your app, change into the folder, and initiate the generator.
 
 ```
 $ mkdir app; cd app; git init .; yo cordovum; git add .; git commit -m "My New App from Yeoman"
