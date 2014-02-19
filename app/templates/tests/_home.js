@@ -7,10 +7,10 @@ define(['home'], function(Home) {
 		});
 
 		describe('View :: ', function() {
-			it('is Welcome Home!', function(){
+			it('is Responsive Mobile!', function(){
 				var view = new Home.View({ el: $('div#stage')});
 				var content = $('div#stage').text();
-				expect(content).toContain('Welcome Home!');
+				expect(content).toContain('Responsive Mobile!');
 			});
 		});		
 	});

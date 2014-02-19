@@ -41,9 +41,9 @@ CordovumGenerator.prototype.askFor = function askFor() {
   // have Yeoman greet the user.
   console.log(this.yeoman);
 
-  var prompts = [ { name: 'appName', message: 'What would you like to call your App? ', default: 'TAG'},
+  var prompts = [ { name: 'appName', message: 'What would you like to call your App? ', default: 'news'},
                   { name: 'appUrl', message: 'Application Url Identifier : ', default: 'com.projectscapa'},
-                  { name: 'appDescription', message: 'Short application description : ', default: 'Travel Advisory Group'},
+                  { name: 'appDescription', message: 'Short application description : ', default: 'News Reader App'},
                   { name: 'appAuthor', message: 'App Author email', default: 'gary.macdonald@projectscapa.com'}
                 ];
 
@@ -95,6 +95,7 @@ CordovumGenerator.prototype.app = function app() {
   this.copy('js/libs/_jsv.js', 'app/js/libs/jsv.js')
   
   this.mkdir('app/scss');
+  this.copy('scss/_app.scss', 'app/scss/app.scss')
   this.copy('scss/__home.scss', 'app/scss/_home.scss')
   this.copy('scss/__colours.scss', 'app/scss/_colours.scss')
   this.copy('scss/__variables.custom.scss', 'app/scss/_variables.custom.scss')
