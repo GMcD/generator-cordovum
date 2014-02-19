@@ -70,6 +70,8 @@ $gutter-widths: ( 8px, 10px, 14px, 20px, 30px, 30px, 40px );
 }
 @mixin button-text($size){
   position: absolute;
+  left: nth($large-font-sizes, $size) + nth($paddings-left, $size);
+  padding-left: nth($paddings-left, $size);
   font-size: nth($large-font-sizes, $size);
   line-height: nth($large-font-sizes, $size + 1);
 }
@@ -78,6 +80,10 @@ $gutter-widths: ( 8px, 10px, 14px, 20px, 30px, 30px, 40px );
 }
 @mixin panel-heading($size) {
   padding: nth($paddings-top, $size) nth($paddings-left, $size) !important;
+  .fa {
+    padding-top: nth($paddings-top, $size);
+    padding-left: nth($paddings-top, $size);
+  }
 }
 @mixin guttering($size) {
   margin: nth($margins-top, $size) nth($margins-left, $size);
@@ -133,10 +139,10 @@ $gutter-widths: ( 8px, 10px, 14px, 20px, 30px, 30px, 40px );
      * Page Layouts
      */
     .panel-heading {
-      @include details-table($size);
+      @include panel-heading($size);
     }
     .panel-body {
-      @include details-table($size);
+      @include panel-body($size);
     }
     .guttering {
       @include guttering($size);

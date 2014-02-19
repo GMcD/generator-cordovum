@@ -13,6 +13,10 @@
 /* Will size responsively for phone and tablet      */
 /* ================================================ */
 
+/*
+ * button-variant args : color, background, border
+ */
+
 /* Background Palette, Foreground Colour - e.g brown with orange on top */
 .btn-bfg {
     @include button-variant($fpt-color, $fpf-color, $fpf-color);
