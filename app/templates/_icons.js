@@ -10,7 +10,15 @@ var iosSplashFolder = iosImgFolder + '/splash';
 var iconPng = imgFolder + 'imp.png';
 var splashPng = imgFolder + 'impFace702.png';
 
-/* fs.mkdirSync(iosImgFolder); */
+if (!fs.existsSync(iosImgFolder)){
+ 	fs.mkdirSync(iosImgFolder);
+}
+if (!fs.existsSync(iosIconFolder)){
+	fs.mkdirSync(iosIconFolder);
+}
+if (!fs.existsSync(iosSplashFolder)){
+	fs.mkdirSync(iosSplashFolder);
+}
 
 /* iOS Icon Images */
 im.resize({ srcPath: iconPng, dstPath: iosIconFolder + '/icon-40.png', width: 40 });
@@ -48,7 +56,25 @@ var androidImgFolder = imgFolder + '/android';
 
 
 /* Make Folders */
-/* fs.mkdirSync(androidImgFolder); */
+if (!fs.existsSync(androidImgFolder)){
+ 	fs.mkdirSync(androidImgFolder);
+}
+var androidImgSubFolder = androidImgFolder + '/drawable';
+if (!fs.existsSync(androidImgSubFolder)){
+	fs.mkdirSync(androidImgSubFolder);
+}
+if (!fs.existsSync(androidImgSubFolder + '-hdpi')){
+	fs.mkdirSync(androidImgSubFolder + '-hdpi');
+}
+if (!fs.existsSync(androidImgSubFolder + '-ldpi')){
+	fs.mkdirSync(androidImgSubFolder + '-ldpi');
+}
+if (!fs.existsSync(androidImgSubFolder + '-mdpi')){
+	fs.mkdirSync(androidImgSubFolder + '-mdpi');
+}
+if (!fs.existsSync(androidImgSubFolder + '-xhdpi')){
+	fs.mkdirSync(androidImgSubFolder + '-xhdpi');
+}
 
 /* Android Icon Images */
 im.resize({ srcPath: iconPng, dstPath: androidImgFolder + '/drawable/icon.png', width: 96 });
