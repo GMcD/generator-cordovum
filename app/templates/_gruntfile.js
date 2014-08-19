@@ -141,7 +141,7 @@ module.exports = function (grunt) {
         }
     },
     watch: {
-        files: ['app/**', '*.js', '<%= _.slugify(appName) %>/config.xml'],
+        files: ['app/**', '*.js', 'cordovum/config.xml'],
         tasks: ['cordova'],
     },
 });
@@ -150,8 +150,6 @@ grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-contrib-connect');
 grunt.loadNpmTasks('grunt-contrib-jasmine');
 grunt.loadNpmTasks('grunt-contrib-sass');
-grunt.loadNpmTasks('grunt-contrib-copy');
-grunt.loadNpmTasks('grunt-contrib-rename');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-cordovacli');
 
