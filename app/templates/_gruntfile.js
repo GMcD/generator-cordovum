@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
 
-    var appwww = '<%= cordovum/www/';
+    var appwww = 'cordovum/www/';
 
     grunt.initConfig({
 
