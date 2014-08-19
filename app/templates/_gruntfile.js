@@ -74,21 +74,6 @@ module.exports = function (grunt) {
                 { src: 'app/require.jasmine.js', dest: appwww, expand: true },
                 { src: 'app/tests/**', dest: appwww, expand: true },
             ]
-        },
-        config: {
-            files: [
-                { src: 'config.android.xml', dest: '<%= _.slugify(appName) %>/platforms/android/res/xml/' },
-                { src: 'config.ios.xml', dest: '<%= _.slugify(appName) %>/platforms/ios/<%= _.slugify(appName) %>/' },
-            ]
-        }
-    },
-    /* Rename Config File */
-    rename: {
-        config: {
-            files: [
-                { src: '<%= _.slugify(appName) %>/platforms/android/res/xml/config.android.xml', dest: '<%= _.slugify(appName) %>/platforms/android/res/xml/config.xml' },
-                { src: '<%= _.slugify(appName) %>/platforms/ios/<%= _.slugify(appName) %>/config.ios.xml', dest: '<%= _.slugify(appName) %>/platforms/ios/<%= _.slugify(appName) %>/config.xml' },
-            ]
         }
     },
     /*
@@ -110,7 +95,7 @@ module.exports = function (grunt) {
         },
         create: {
             options: {
-                path: '<%= _.slugify(appName) %>',
+                path: 'cordovum',
                 command: 'create',
                 id: '<%= appBundle %>',
                 name: '<%= _.slugify(appName) %>'
@@ -155,7 +140,7 @@ module.exports = function (grunt) {
         }
     },
     watch: {
-        files: ['app/**'],
+        files: ['app/**', '*.js', '<%= _.slugify(appName) %>/config.xml'],
         tasks: ['cordova'],
     },
 });
@@ -172,7 +157,7 @@ grunt.loadNpmTasks('grunt-cordovacli');
 /* SPA build test and push task */
 grunt.registerTask('default', [ 'jshint', 'sass', 'connect', 'jasmine', 'copy' ]);
 /* Task to build device packages */
-grunt.registerTask('cordova', [ 'sass', 'copy', 'cordovacli:cordova', 'copy:config', 'rename:config' ]);
+grunt.registerTask('cordova', [ 'sass', 'copy', 'cordovacli:cordova' ]);
 /* Initial Setup Task - Create Cordova App and add ios and android */
 grunt.registerTask('setup', [ 'cordovacli:create', 'cordovacli:add_platforms' ]);
 

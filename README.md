@@ -37,6 +37,18 @@ Run <code>nodemon ./server.js</code> at the project root for Chrome sessions - b
 
 Run <code>grunt cordovacli:build</code> to generate the APK and IPA builds.
 
+# Add Plugins
+
+To Install the cordovum-preferences plugin, <code>cd appname;</code> and run 
+
+```
+cordova plugin add org.apache.cordova.network-information
+cordova plugin add https://github.com/GMcD/cordovum-preferences.git
+...
+```
+
+The plugin incorporates a Settings bundle for iOS and a preferences xml file for Android.
+
 # Project Configuration
 
 The iOS project file will need Target Properties set for 

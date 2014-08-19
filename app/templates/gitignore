@@ -58,6 +58,8 @@ bower_components/
 node_modules/
 app/css/
 <%= _.slugify(appName) %>/platforms/android/platform_www/
+<%= _.slugify(appName) %>/platforms/android/assets/
+<%= _.slugify(appName) %>/platforms/android/.settings/
 <%= _.slugify(appName) %>/platforms/ios/platform_www/
 <%= _.slugify(appName) %>/platforms/ios/www/
 <%= _.slugify(appName) %>/www

@@ -21,7 +21,12 @@ if (!fs.existsSync(iosSplashFolder)){
 }
 
 /* iOS Icon Images */
-im.resize({ srcPath: iconPng, dstPath: iosIconFolder + '/icon-40.png', width: 40 });
+im.resize({ srcPath: iconPng, dstPath: iosIconFolder + '/icon-40.png', width: 40 }, function(err, stdout, stderr) {
+    if(err)
+      console.log(err)
+    else {
+      console.log('Created ' + iosIconFolder + '/icon-40.png');
+    });
 im.resize({ srcPath: iconPng, dstPath: iosIconFolder + '/icon-40@2x.png', width: 80 });
 im.resize({ srcPath: iconPng, dstPath: iosIconFolder + '/icon-50.png', width: 50 });
 im.resize({ srcPath: iconPng, dstPath: iosIconFolder + '/icon-50@2x.png', width: 100 });

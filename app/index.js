@@ -28,6 +28,7 @@ var CordovumGenerator = module.exports = function CordovumGenerator(args, option
   this.on('platformsSetup', function() {
       this.spawnCommand('grunt', ['cordova', 'cordovacli:build']);
       this.spawnCommand('grunt', ['default']);
+      // XXX add grunt task to clean cordova index.js and to create icons
   });
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
@@ -75,8 +76,6 @@ CordovumGenerator.prototype.app = function app() {
   this.mkdir('app');
   this.copy('_server.js', 'server.js')
   this.copy('_icons.js', 'icons.js')
-  this.copy('_config.android.xml', 'config.android.xml')
-  this.copy('_config.ios.xml', 'config.ios.xml')
 
   this.mkdir('app/css');
   this.mkdir('app/fonts');
@@ -93,6 +92,7 @@ CordovumGenerator.prototype.app = function app() {
   this.copy('js/libs/_jquery.ui.touch-punch.js', 'app/js/libs/jquery.ui.touch-punch.js')
   this.copy('js/libs/_jsonform.js', 'app/js/libs/jsonform.js')
   this.copy('js/libs/_jsv.js', 'app/js/libs/jsv.js')
+  this.copy('js/libs/_utils.js', 'app/js/libs/utils.js')
   
   this.mkdir('app/scss');
   this.copy('scss/_app.scss', 'app/scss/app.scss')
@@ -118,3 +118,17 @@ CordovumGenerator.prototype.app = function app() {
   this.copy('_require.jasmine.js', 'app/require.jasmine.js');
 
 };
+
+CordovumGenerator.prototype.app = function app() {
+  this.mkdir('app/scss/spinner');
+  this.copy('scss/spinner/_indicator.base.scss', 'app/scss/spinner/_indicator.base.scss');  
+  this.copy('scss/spinner/_indicator.fblocks.scss', 'app/scss/spinner/_indicator.fblocks.scss');
+  this.copy('scss/spinner/_indicator.pulsar.scss', 'app/scss/spinner/_indicator.pulsar.scss');
+  this.copy('scss/spinner/_indicator.squared.scss', 'app/scss/spinner/_indicator.squared.scss');
+  this.copy('scss/spinner/_indicator.bouncer.scss', 'app/scss/spinner/_indicator.bouncer.scss');
+  this.copy('scss/spinner/_indicator.loopy.scss', 'app/scss/spinner/_indicator.loopy.scss');
+  this.copy('scss/spinner/_indicator.spinner.scss', 'app/scss/spinner/_indicator.spinner.scss');
+  this.mkdir('app/scss/spinner/partials');
+  this.copy('scss/spinner/partials/_mixins.scss', 'app/scss/spinner/partials/_mixins.scss');
+  this.copy('scss/spinner/partials/_vars.scss', 'app/scss/spinner/partials/_vars.scss');
+}

@@ -1,41 +1,30 @@
 /* App */
-define(['jquery','underscore','modernizr','fastclick','router'], function(){
+define(['jquery','underscore','modernizr','fastclick','router','touchy'], function(){
     /* Loads the require modules and away */
-    require(['jquery','underscore','modernizr','fastclick','router'], 
-	function($, _, Modernizr, FastClick, Router){
-
-      /* Get Url Parameters - Expect Platform at least */
-      function getUrlParameters(){
-            /* Default to Chrome */
-            var options = { platform : 'chrome' };
-            var prmstr = window.location.search.substr(1);
-            var prmarr = prmstr.split ("&");
-            /* Collect any variation from URL */
-            for ( var i = 0; i < prmarr.length; i++) {
-                var tmparr = prmarr[i].split("=");
-                options[tmparr[0]] = tmparr[1];
-            }
-            options[options.platform] = true;
-            return options;
-      }
-      function selector(d) { var s = d.localName; if (d.id.length) { s += '#' + d.id; } if (d.className.length) { s += '.' + d.className; } return s; }
+    require(['jquery','underscore','modernizr','fastclick','router','touchy'], 
+	function($, _, Modernizr, FastClick, Router /* $.touchy */){
 
       /*
        * Device Waiting
        */
-      var app = {
+      app = {
           initialize: function() {
               this.bindEvents();
           },
+          options : {
+            platform : 'chrome'
+          },
           bindEvents: function() {
               document.addEventListener('deviceready', this.onDeviceReady, false);
-              this.options = getUrlParameters();
-              if (this.options.ios){
+
+              app.options = Utils.getOptions(app.options);
+              
+              if (app.options.ios){
                   console.log("Loading Cordova for iOS!");
                   require(['cordova'], function(){
                         console.log("Loaded iOS Cordova...");
                   });
-            } else if (this.options.android){
+            } else if (app.options.android){
                   console.log("Loading Cordova for Android!");
                   require(['cordova'], function(){
                         console.log("Loaded Android Cordova...");
@@ -49,7 +38,7 @@ define(['jquery','underscore','modernizr','fastclick','router'], function(){
          * App and Cordova Loaded - Start App Home Page
          */
           onDeviceReady: function() {
-              var router = new Router.Router();
+              app.router = new Router.Router();
           },
       };
 
