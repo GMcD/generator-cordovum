@@ -28,7 +28,8 @@ module.exports = function (grunt) {
             jQuery : true,
             JSONForm : true,
             console : true,
-            module : true
+            module : true,
+            app : true
         }
       },
       files: {
