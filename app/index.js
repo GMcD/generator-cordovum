@@ -26,8 +26,8 @@ var CordovumGenerator = module.exports = function CordovumGenerator(args, option
   });
 
   this.on('platformsSetup', function() {
-      this.spawnCommand('grunt', ['cordova', 'cordovacli:build']);
       this.spawnCommand('grunt', ['default']);
+      this.spawnCommand('grunt', ['cordova', 'cordovacli:build']);
       // XXX add grunt task to clean cordova index.js and to create icons
   });
 
@@ -74,8 +74,8 @@ CordovumGenerator.prototype.projectfiles = function projectfiles() {
 
 CordovumGenerator.prototype.app = function app() {
   this.mkdir('app');
-  this.copy('_server.js', 'server.js')
-  this.copy('_icons.js', 'icons.js')
+  this.copy('_server.js', 'server.js');
+  this.copy('_icons.js', 'icons.js');
 
   this.mkdir('app/css');
   this.mkdir('app/fonts');
