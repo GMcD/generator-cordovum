@@ -1,8 +1,8 @@
 /* App */
-define(['jquery','underscore','modernizr','fastclick','router','touchy'], function(){
+define(['jquery','underscore','modernizr','fastclick','utils','router','touchy'], function(){
     /* Loads the require modules and away */
-    require(['jquery','underscore','modernizr','fastclick','router','touchy'], 
-	function($, _, Modernizr, FastClick, Router /* $.touchy */){
+    require(['jquery','underscore','modernizr','fastclick','utils','router','touchy'], 
+	function($, _, Modernizr, FastClick, Utils, Router /* $.touchy */){
 
       /*
        * Device Waiting
@@ -18,7 +18,7 @@ define(['jquery','underscore','modernizr','fastclick','router','touchy'], functi
               document.addEventListener('deviceready', this.onDeviceReady, false);
 
               app.options = Utils.getOptions(app.options);
-              
+
               if (app.options.ios){
                   console.log("Loading Cordova for iOS!");
                   require(['cordova'], function(){
@@ -52,7 +52,7 @@ define(['jquery','underscore','modernizr','fastclick','router','touchy'], functi
             $(document).on('touchmove', false);
 
             $('html,body').on('touchmove', function(e){
-                var id = selector(e.target);
+                var id = Utils.selector(e.target);
                 console.log("Touched : " + id );
                 e.preventDefault();
             });
