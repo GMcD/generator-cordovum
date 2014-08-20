@@ -11,13 +11,19 @@
 *.class
 
 # generated files - android project subfolder
-Android/bin/
-Android/gen/
-Android/assets/
-
-# generated files
 bin/
 gen/
+
+# Eclipse project to export gradle
+eclipse/
+
+# android studio project - gradle, idea, gen
+ant-gen/
+ant-build/
+build/
+.gradle/
+.idea/
+.settings/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -54,12 +60,12 @@ IOS/www/
 .grunt/
 _SpecRunner.html
 
-bower_components/
 node_modules/
 app/css/
-<%= _.slugify(appName) %>/platforms/android/platform_www/
-<%= _.slugify(appName) %>/platforms/android/assets/
-<%= _.slugify(appName) %>/platforms/android/.settings/
-<%= _.slugify(appName) %>/platforms/ios/platform_www/
-<%= _.slugify(appName) %>/platforms/ios/www/
-<%= _.slugify(appName) %>/www
+
+# Relocated assets
+cordovum/platforms/android/platform_www/
+cordovum/platforms/android/assets/
+cordovum/platforms/ios/platform_www/
+cordovum/platforms/ios/www/
+cordovum/www/

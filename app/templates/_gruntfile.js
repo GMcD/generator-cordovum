@@ -144,6 +144,11 @@ module.exports = function (grunt) {
         files: ['app/**', '*.js', 'cordovum/config.xml'],
         tasks: ['cordova'],
     },
+    clean: {
+        once: ["cordovum/www/*", "!cordovum/www/app", "!cordovum/www/bower_components"],
+        twice: ["cordovum/www/*", "!cordovum/www/bower_components"],
+        all: ["cordovum/www/*"]
+    },
 });
 
 grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -151,12 +156,16 @@ grunt.loadNpmTasks('grunt-contrib-connect');
 grunt.loadNpmTasks('grunt-contrib-jasmine');
 grunt.loadNpmTasks('grunt-contrib-sass');
 grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-contrib-copy');
+grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-cordovacli');
 
 /* SPA build test and push task */
 grunt.registerTask('default', [ 'jshint', 'sass', 'connect', 'jasmine', 'copy' ]);
 /* Task to build device packages */
 grunt.registerTask('cordova', [ 'sass', 'copy', 'cordovacli:cordova' ]);
+/* Task to rebuild device packages */
+grunt.registerTask('release', [ 'clean:all', 'sass', 'copy', 'cordovacli:cordova', 'cordovacli:build' ]);
 /* Initial Setup Task - Create Cordova App and add ios and android */
 grunt.registerTask('setup', [ 'cordovacli:create', 'cordovacli:add_platforms' ]);
 

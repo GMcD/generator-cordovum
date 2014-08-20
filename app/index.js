@@ -41,6 +41,9 @@ CordovumGenerator.prototype.askFor = function askFor() {
 
   // have Yeoman greet the user.
   console.log(this.yeoman);
+  // Remind the user to have a clean git repo
+  console.log("Remember to run like this: ");
+  console.log("\t$ mkdir app; cd app; git init .; yo cordovum; git add .; git commit -m `My New App from Yeoman`");
 
   var prompts = [ { name: 'appName', message: 'What would you like to call your App? ', default: 'news'},
                   { name: 'appUrl', message: 'Application Url Identifier : ', default: 'com.projectscapa'},
@@ -128,4 +131,7 @@ CordovumGenerator.prototype.app = function app() {
   this.mkdir('app/scss/spinner/partials');
   this.copy('scss/spinner/partials/_mixins.scss', 'app/scss/spinner/partials/_mixins.scss');
   this.copy('scss/spinner/partials/_vars.scss', 'app/scss/spinner/partials/_vars.scss');
+
+  /* Use this as workspace, and Import android project, export Gradle files */
+  this.mkdir('eclipse');
 }
