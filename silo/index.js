@@ -21,7 +21,7 @@ CordovumGenerator.prototype.askFor = function askFor() {
                 ];
 
   this.prompt(prompts, function (props) {
-    this.siloName = props.siloName;
+    this.siloName = _.slugify(props.siloName);
 
     cb();
   }.bind(this));
@@ -30,7 +30,7 @@ CordovumGenerator.prototype.askFor = function askFor() {
 CordovumGenerator.prototype.module = function silo() {
 
   this.copy('_silo.js', 'app/js/' + this.siloName + '.js');
-  this.copy('_silo.tpl', 'app/tpl/' + this.siloName + '.html');
+  this.copy('_silo.tpl', 'app/tpl/' + this.siloName + 'Template.html');
   this.copy('_silo.scss', 'app/scss/_' + this.siloName + '.scss');
 
 };
