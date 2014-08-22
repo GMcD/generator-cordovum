@@ -21,7 +21,7 @@ CordovumGenerator.prototype.askFor = function askFor() {
                 ];
 
   this.prompt(prompts, function (props) {
-    this.siloName = _.slugify(props.siloName);
+    this.siloName = this._.slugify(props.siloName);
 
     cb();
   }.bind(this));
