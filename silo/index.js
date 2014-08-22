@@ -29,7 +29,7 @@ CordovumGenerator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
-CordovumGenerator.prototype.module = function silo() {
+CordovumGenerator.prototype.silo = function silo() {
 
   this.copy('_silo.js', 'app/js/' + this.siloName + '.js');
   this.copy('_silo.tpl', 'app/tpl/' + this.siloName + 'Template.html');
@@ -37,7 +37,7 @@ CordovumGenerator.prototype.module = function silo() {
 
 };
 
-CordovumGenerator.prototype.module = function addSassImport() {
+CordovumGenerator.prototype.addSassImport = function addSassImport() {
   var hook   = '/*** Yeoman Placeholder ***/',
       path   = 'app/scss/app.scss',
       file   = this.readFileAsString(path),
@@ -48,11 +48,11 @@ CordovumGenerator.prototype.module = function addSassImport() {
   }
 };
 
-CordovumGenerator.prototype.module = function addRequireJS() {
+CordovumGenerator.prototype.addRequireJS = function addRequireJS() {
   var hook   = '/*** Yeoman Placeholder ***/',
       path   = 'app/require.app.js',
       file   = this.readFileAsString(path),
-      insert = "app             : 'app/js/" + this.siloName + "',\n" + hook;
+      insert = "    " + this.siloName + "             : 'app/js/" + this.siloName + "',\n" + hook;
 
   if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, insert));
