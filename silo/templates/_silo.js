@@ -2,11 +2,11 @@ define([ 'jquery', 'underscore', 'backbone', 'text!tpl/<%= _.slugify(siloName) %
     function( $, _, Backbone, <%= _.slugify(siloName) %>Template ) {
 
     /*
-     * Simple <%= _.camelize(siloName) %> Model
+     * Simple <%= _.capitalize(siloName) %> Model
      */
-    var <%= _.camelize(siloName) %> = Backbone.Model.extend({
+    var <%= _.capitalize(siloName) %> = Backbone.Model.extend({
         url : function(){
-            var url = baseUrl + 'api/<%= _.slugify(siloName) %>s/' + this.id + '/';
+            var url = app.baseUrl + '<%= _.slugify(apiUrl) %>/' + this.id + '/';
             return url;
         },
         parse : function(resp){
@@ -15,20 +15,20 @@ define([ 'jquery', 'underscore', 'backbone', 'text!tpl/<%= _.slugify(siloName) %
     });
 
     /*
-     * Simple <%= _.camelize(siloName) %>s Collection
+     * Simple <%= _.capitalize(siloName) %>s Collection
      */
-    var <%= _.camelize(siloName) %>s = Backbone.Collection.extend( {
+    var <%= _.capitalize(siloName) %>s = Backbone.Collection.extend( {
         url : function(){
-            var url = baseUrl + 'api/<%= _.slugify(siloName) %>s/';
+            var url = app.baseUrl + '<%= _.slugify(apiUrl) %>/';
             return url;
         },
-        model: <%= _.camelize(siloName) %>
+        model: <%= _.capitalize(siloName) %>
     } );
 
     /*
-     * Simple <%= _.camelize(siloName) %>View
+     * Simple <%= _.capitalize(siloName) %>View
      */
-    var <%= _.camelize(siloName) %>View = Backbone.View.extend({
+    var <%= _.capitalize(siloName) %>View = Backbone.View.extend({
         el : $('div#stage'),
         /*
          * Initialise and wait for sync to render
@@ -39,7 +39,7 @@ define([ 'jquery', 'underscore', 'backbone', 'text!tpl/<%= _.slugify(siloName) %
             // or -> this.render();
         },
         /*
-         * Renders <%= _.camelize(siloName) %> View
+         * Renders <%= _.capitalize(siloName) %> View
          */
         render: function(){
             var <%= _.slugify(siloName) %>s = this.collection.toJSON();
@@ -50,6 +50,6 @@ define([ 'jquery', 'underscore', 'backbone', 'text!tpl/<%= _.slugify(siloName) %
         }
     });
 
-    return { View : <%= _.camelize(siloName) %>View, Collection : <%= _.camelize(siloName) %>s, Model : <%= _.camelize(siloName) %> };
+    return { View : <%= _.capitalize(siloName) %>View, Collection : <%= _.capitalize(siloName) %>s, Model : <%= _.capitalize(siloName) %> };
 
 });

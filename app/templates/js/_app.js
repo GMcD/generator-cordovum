@@ -8,6 +8,7 @@ define(['jquery','underscore','modernizr','fastclick','utils','router','touchy']
        * Device Waiting
        */
       app = {
+          baseUrl: 'http://your.service.com/',
           initialize: function() {
               this.bindEvents();
           },

@@ -17,11 +17,13 @@ CordovumGenerator.prototype.askFor = function askFor() {
   // have Yeoman greet the user.
   console.log(this.yeoman);
 
-  var prompts = [ { name: 'siloName', message: 'What would you like to call your Silo? ', default: 'Silo'}
+  var prompts = [ { name: 'siloName', message: 'What would you like to call your Silo? ', default: 'Silo'},
+                  { name: 'apiUrl', message: 'What is the Rest api endpoint? ', default: 'silos/'}
                 ];
 
   this.prompt(prompts, function (props) {
     this.siloName = this._.slugify(props.siloName);
+    this.apiUrl = this._.slugify(props.apiUrl);
 
     cb();
   }.bind(this));
