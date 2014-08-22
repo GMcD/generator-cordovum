@@ -24,7 +24,8 @@ require.config({
     tpl             : 'app/tpl',
     home            : 'app/js/home',
     router          : 'app/js/router',
-    app             : 'app/js/app'
+    app             : 'app/js/app',
+/*** Yeoman Placeholder ***/
   },
   shim: {
     underscore: {

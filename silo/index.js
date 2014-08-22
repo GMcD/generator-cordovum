@@ -23,7 +23,7 @@ CordovumGenerator.prototype.askFor = function askFor() {
 
   this.prompt(prompts, function (props) {
     this.siloName = this._.slugify(props.siloName);
-    this.apiUrl = this._.slugify(props.apiUrl);
+    this.apiUrl = props.apiUrl;
 
     cb();
   }.bind(this));
@@ -35,4 +35,26 @@ CordovumGenerator.prototype.module = function silo() {
   this.copy('_silo.tpl', 'app/tpl/' + this.siloName + 'Template.html');
   this.copy('_silo.scss', 'app/scss/_' + this.siloName + '.scss');
 
+};
+
+CordovumGenerator.prototype.module = function addSassImport() {
+  var hook   = '/*** Yeoman Placeholder ***/',
+      path   = 'app/scss/app.scss',
+      file   = this.readFileAsString(path),
+      insert = '@insert "_' + this.siloName + '";\n' + hook;
+
+  if (file.indexOf(insert) === -1) {
+      this.write(path, file.replace(hook, insert));
+  }
+};
+
+CordovumGenerator.prototype.module = function addRequireJS() {
+  var hook   = '/*** Yeoman Placeholder ***/',
+      path   = 'app/require.app.js',
+      file   = this.readFileAsString(path),
+      insert = "app             : 'app/js/" + this.siloName + "',\n" + hook;
+
+  if (file.indexOf(insert) === -1) {
+      this.write(path, file.replace(hook, insert));
+  }
 };
