@@ -41,7 +41,7 @@ CordovumGenerator.prototype.addSassImport = function addSassImport() {
   var hook   = '/*** Yeoman Placeholder ***/',
       path   = 'app/scss/app.scss',
       file   = this.readFileAsString(path),
-      insert = '@insert "_' + this.siloName + '";\n' + hook;
+      insert = '@import "_' + this.siloName + '";\n' + hook;
 
   if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, insert));
