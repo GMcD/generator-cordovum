@@ -37,6 +37,13 @@ Run <code>nodemon ./server.js</code> at the project root for Chrome sessions - b
 
 Run <code>grunt cordovacli:build</code> to generate the APK and IPA builds.
 
+# Sub Generators
+
+Cordovum comes with two sub-generators
+  * Silo - This will generate a Model, Collection, View, Style and integrate with the App build system.
+  > Note - This does not auto-generate a route within the Router, at this time.
+  * Jazz - This will generate a Jasmine test file for the endpoint model and view.
+
 # Add Plugins
 
 To Install the cordovum-preferences plugin, <code>cd appname;</code> and run 

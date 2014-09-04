@@ -33,6 +33,7 @@ require(['require.app'], function(){
     var specs = [];
    
     specs.push('tests/home');
+/*** Yeoman Placeholder ***/
    
     $(function(){
       require(specs, function(){

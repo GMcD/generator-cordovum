@@ -19,7 +19,7 @@ define([ 'jquery', 'underscore', 'backbone', 'text!tpl/<%= _.slugify(siloName) %
      */
     var <%= _.capitalize(siloName) %>s = Backbone.Collection.extend( {
         url : function(){
-            var url = app.baseUrl + '<%= _.slugify(apiUrl) %>/';
+            var url = app.baseUrl + '<%= apiUrl %>/';
             return url;
         },
         model: <%= _.capitalize(siloName) %>

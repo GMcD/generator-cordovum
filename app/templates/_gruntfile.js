@@ -119,6 +119,11 @@ module.exports = function (grunt) {
     },
     // Test requires and their specs
     jasmine: {
+        options : {
+          '--web-security' : false,
+          '--local-to-remote-url-access' : true,
+          '--ignore-ssl-errors' : true
+        },
         all: {
             src: [ 'jquery','underscore', 'home' ],
             options: {
