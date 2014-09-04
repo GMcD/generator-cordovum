@@ -165,6 +165,8 @@ grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-cordovacli');
 
+/* Jasmine test  */
+grunt.registerTask('test', [ 'jshint', 'sass', 'connect', 'jasmine' ]);
 /* SPA build test and push task */
 grunt.registerTask('default', [ 'jshint', 'sass', 'connect', 'jasmine', 'copy' ]);
 /* Task to build device packages */

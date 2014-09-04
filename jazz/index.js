@@ -39,7 +39,7 @@ CordovumGenerator.prototype.addJasmineSpec = function addJasmineSpec() {
   var hook   = '/*** Yeoman Placeholder ***/',
       path   = 'app/require.jasmine.js',
       file   = this.readFileAsString(path),
-      insert = 'specs.push("tests/' + this.siloName + '");\n' + hook;
+      insert = "    specs.push('tests/" + this.siloName + "');\n" + hook;
 
   if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, insert));
