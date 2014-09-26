@@ -1,4 +1,4 @@
-define([<%= _.slugify(siloName) %>], function(<%= _.capitalize(siloName) %>) {
+define(['<%= _.slugify(siloName) %>'], function(<%= _.capitalize(siloName) %>) {
 
 	app = { baseUrl : 'http://www.your-api.com/'};
 
@@ -6,7 +6,7 @@ define([<%= _.slugify(siloName) %>], function(<%= _.capitalize(siloName) %>) {
 		var done, result;
 
 		beforeEach(function () {
-			$('body').html('<div id="stage">Eeek!</div>');
+			done = result = false;
 		});
 
 		describe('Fetch :: ', function() {
@@ -36,6 +36,8 @@ define([<%= _.slugify(siloName) %>], function(<%= _.capitalize(siloName) %>) {
 		});
 
 		describe('View :: ', function() {
+			$('body').html('<div id="stage">Eeek!</div>');
+
 			var model = new <%= _.capitalize(siloName) %>.Model({ id : 1 });
 			var view = new <%= _.capitalize(siloName) %>.View({ el: $('div#stage'), model : model });
 

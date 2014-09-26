@@ -113,8 +113,10 @@ module.exports = function (grunt) {
     // Web server to test against
     connect: {
         test : {
-            port : 8000,
-            base : ''
+            config : {
+                port : 8001,
+                base : ''
+            }
         }
     },
     // Test requires and their specs
@@ -129,7 +131,7 @@ module.exports = function (grunt) {
             options: {
                 keepRunner: true,
                 specs: ['app/tests/*.js'],
-                host : 'http://127.0.0.1:8000/',
+                host : 'http://127.0.0.1:8001/',
                 template: require('grunt-template-jasmine-requirejs'),
                 templateOptions: {
                     requireConfigFile: [ 'app/require.app.js', 'app/require.jasmine.js' ]

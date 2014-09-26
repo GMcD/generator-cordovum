@@ -6,7 +6,7 @@ define([ 'jquery', 'underscore', 'backbone', 'text!tpl/<%= _.slugify(siloName) %
      */
     var <%= _.capitalize(siloName) %> = Backbone.Model.extend({
         url : function(){
-            var url = app.baseUrl + '<%= _.slugify(apiUrl) %>/' + this.id + '/';
+            var url = app.baseUrl + '<%= apiUrl %>/' + this.id + '/';
             return url;
         },
         parse : function(resp){
