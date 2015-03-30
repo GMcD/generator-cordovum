@@ -2,6 +2,7 @@ require.config({
   baseUrl: '../',
   urlArgs: 'cb=' + Math.random(),
   paths: {
+    config          : 'app/js/libs/config',
     jasmine         : 'bower_components/jasmine/lib/jasmine-core/jasmine',
     'jasmine-html'  : 'bower_components/jasmine/lib/jasmine-core/jasmine-html',
   },

@@ -1,5 +1,5 @@
 define(
-        ['jquery', 'underscore', 'backbone', 'home'],
+        ['config', 'jquery', 'underscore', 'backbone', 'home'],
     function($, _, Backbone, Home){
 
     var Router = Backbone.Router.extend({
@@ -12,14 +12,6 @@ define(
          */
         initialize: function() {
             console.log('Router Initialization...');
-
-            /*
-             * Back is not a Route - Just navigate back via window history
-             */
-            $(document).on('click', '.back', function(e) {
-                  e.preventDefault();
-                  window.history.back();
-            });
 
             /*
              * Now start routing requests

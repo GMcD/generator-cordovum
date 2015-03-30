@@ -1,6 +1,4 @@
-define(['<%= _.slugify(siloName) %>'], function(<%= _.capitalize(siloName) %>) {
-
-	app = { baseUrl : 'http://www.your-api.com/'};
+define(['config', '<%= _.slugify(siloName) %>'], function(app, <%= _.capitalize(siloName) %>) {
 
 	return describe('<%= _.capitalize(siloName) %> :: ', function() {
 		var done, result;

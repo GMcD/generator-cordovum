@@ -1,0 +1,30 @@
+
+
+cordovum - 
+	\/ add utils
+	\/ remove config.xml processing?
+	\/ simplify app.js
+	\/ update npm dependency
+	\/ add moment to require.app
+	\/ remove dependency on app/app.html?platform=ios to config.xml (or add value for now)
+	\/ add global app and app.router 
+	\/ add Utils - selector etc...
+	\/ add app/img/ios|android, and add exec/params to icon.js
+	\/ add config and grunt to watch list...
+	\/ , '*.xml', 'eventwallet/config.xml', 'gruntfile.js' 
+	\/ remove old index.js etc...
+	\/ add require and scss from Silo sub-generator
+
+	capitalize App?
+	modularize bootstrap scss
+	add events to default home.tpl/home.js
+	add update of config.xml from index.html to app/app.html ?parameters for platform?
+	add icons as parameter
+	add basic parameter to 'home model' - to allow data input from 'fake collection/model'
+	add _font.scss
+	update semver to latest for cordova/backbone related stuff
+
+	add route from Silo sub-generator
+
+cordovum - preferences -
+  

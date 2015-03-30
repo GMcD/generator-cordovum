@@ -21,6 +21,7 @@ require.config({
     jscroll         : 'app/js/libs/jquery.jscrollpane',
     touchy          : 'app/js/libs/jquery.touchy',
     utils           : 'app/js/libs/utils',
+    config          : 'app/js/libs/config',
     tpl             : 'app/tpl',
     home            : 'app/js/home',
     router          : 'app/js/router',
