@@ -7,12 +7,12 @@
 /*
  * Use Bootstrap mixins mostly
  */
-@import "bower_components/bootstrap-sass/lib/mixins";
+@import "../../bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap/_mixins";
 /*
  * Add transform from bourbon
  */
-@import "bower_components/bourbon/app/assets/stylesheets/addons/_prefixer.scss";
-@import "bower_components/bourbon/app/assets/stylesheets/css3/_transform.scss";
+@import "../../bower_components/bourbon/app/assets/stylesheets/addons/_prefixer.scss";
+@import "../../bower_components/bourbon/app/assets/stylesheets/css3/_transform.scss";
 
 /* ==================================================== */
 /* Text and Textarea Inputs                             */

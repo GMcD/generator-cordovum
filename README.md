@@ -16,7 +16,7 @@ $ npm install -g yo
 To locally update generator-cordovum from git, run:
 
 ```
-$ cd /usr/local/lib/node_modules/generator-cordovum; sudo git pull
+$ pushd /usr/local/lib/node_modules/generator-cordovum; sudo git pull; popd
 ```
 
 Later, once in the npm registery, install generator-cordovum by running:
