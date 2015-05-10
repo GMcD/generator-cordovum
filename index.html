@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Generator-cordovum by GMcD</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Generator-cordovum</h1>
+        <p class="header">Yeoman Cordova Generator</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/GMcD/generator-cordovum/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/GMcD/generator-cordovum/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/GMcD/generator-cordovum">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/GMcD">GMcD</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a id="generator-cordovum" class="anchor" href="#generator-cordovum" aria-hidden="true"><span class="octicon octicon-link"></span></a>generator-cordovum</h1>
+
+<p>A Yeoman Generator for <a href="http://cordova.apache.org">Cordova</a>.</p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>Not every new computer comes with a Yeoman pre-installed. He lives in the <a href="https://npmjs.org">npm</a> package repository. You only have to ask for him once, then he packs up and moves into your hard drive. </p>
+
+<pre><code>$ npm install -g yo
+</code></pre>
+
+<h3>
+<a id="yeoman-cordovum-generator" class="anchor" href="#yeoman-cordovum-generator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yeoman Cordovum Generator</h3>
+
+<p>To locally update generator-cordovum from git, run:</p>
+
+<pre><code>$ pushd /usr/local/lib/node_modules/generator-cordovum; sudo git pull; popd
+</code></pre>
+
+<p>Later, once in the npm registery, install generator-cordovum by running:</p>
+
+<pre><code>$ npm install -g generator-cordovum
+</code></pre>
+
+<p>Setup an <strong>empty</strong> folder (and repository) for your app, change into the folder, and initiate the generator.</p>
+
+<pre><code>$ mkdir app; cd app; git init .; yo cordovum; git add .; git commit -m "My New App from Yeoman"
+</code></pre>
+
+<p>Start <code>grunt watch</code> at the project root to auto generate assets and prepare XCode or Eclipse projects.</p>
+
+<p>Run <code>nodemon ./server.js</code> at the project root for Chrome sessions - browse to http://localhost:8080/app/app.html. </p>
+
+<p>Run <code>grunt cordovacli:build</code> to generate the APK and IPA builds.</p>
+
+<h1>
+<a id="sub-generators" class="anchor" href="#sub-generators" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sub Generators</h1>
+
+<p>Cordovum comes with two sub-generators</p>
+
+<ul>
+<li>Silo - This will generate a Model, Collection, View, Style and integrate with the App build system.
+&gt; Note - This does not auto-generate a route within the Router, at this time.</li>
+<li>Jazz - This will generate a Jasmine test file for the endpoint model and view.</li>
+</ul>
+
+<h1>
+<a id="add-plugins" class="anchor" href="#add-plugins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add Plugins</h1>
+
+<p>To Install the cordovum-preferences plugin, <code>cd appname;</code> and run </p>
+
+<pre><code>cordova plugin add org.apache.cordova.network-information
+cordova plugin add https://github.com/GMcD/cordovum-preferences.git
+...
+</code></pre>
+
+<p>The plugin incorporates a Settings bundle for iOS and a preferences xml file for Android.</p>
+
+<h1>
+<a id="project-configuration" class="anchor" href="#project-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project Configuration</h1>
+
+<p>The iOS project file will need Target Properties set for </p>
+
+<ul>
+<li>supported orientations (ALL), </li>
+<li>View Controller-based status bar appearance (NO), and </li>
+<li>status bar initially hidden (YES).</li>
+</ul>
+
+<h3>
+<a id="getting-to-know-cordovum" class="anchor" href="#getting-to-know-cordovum" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting To Know Cordovum</h3>
+
+<p>If you'd like to get to know Yeoman better and meet some of his friends, <a href="http://gruntjs.com">Grunt</a> and <a href="http://bower.io">Bower</a>, check out the complete <a href="https://github.com/yeoman/yeoman/wiki/Getting-Started">Getting Started Guide</a>.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p><a href="http://en.wikipedia.org/wiki/MIT_License">MIT License</a></p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
