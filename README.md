@@ -28,27 +28,33 @@ $ npm install -g generator-cordovum
 Setup an __empty__ folder (and repository) for your app, change into the folder, and initiate the generator.
 
 ```
-$ mkdir app; cd app; git init .; yo cordovum; git add .; git commit -m "My New App from Yeoman"
+$ mkdir app
+$ cd app
+$ git init .
+$ yo cordovum;
+$ git add .
+$ git commit -m "My New App from Yeoman"
 ```
 
-Start <code>grunt watch</code> at the project root to auto generate assets and prepare XCode or Eclipse projects.
+Start `grunt watch` at the project root to auto generate assets and prepare XCode or Android Studio projects.
 
-Run <code>nodemon ./server.js</code> at the project root for Chrome sessions - browse to http://localhost:8080/app/app.html. 
+Run `nodemon ./server.js` at the project root for Chrome sessions - browse to http://localhost:8080/app/app.html. 
 
-Run <code>grunt cordovacli:build</code> to generate the APK and IPA builds.
+Run `grunt cordovacli:build` to generate the APK and IPA builds.
 
 # Sub Generators
 
 Cordovum comes with two sub-generators
   * Silo - This will generate a Model, Collection, View, Style and integrate with the App build system.
-  > Note - This does not auto-generate a route within the Router, at this time.
+  	** Note - This does not auto-generate a route within the Router, at this time.
   * Jazz - This will generate a Jasmine test file for the endpoint model and view.
 
 # Add Plugins
 
-To Install the cordovum-preferences plugin, <code>cd appname;</code> and run 
+To Install the cordovum-preferences plugin, `cd appname;` and run 
 
 ```
+cordova plugin add org.apache.cordova.device
 cordova plugin add org.apache.cordova.network-information
 cordova plugin add https://github.com/GMcD/cordovum-preferences.git
 ...
