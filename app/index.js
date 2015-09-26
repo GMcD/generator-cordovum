@@ -16,7 +16,7 @@ var CordovumGenerator = module.exports = function CordovumGenerator(args, option
                 var cl = path.join(cp, 'node_modules/cordova-lib')
                 process.chdir(cl);
                 this.installDependencies({
-                    skipInstall: options['skip-install'].,
+                    skipInstall: options['skip-install'],
                     callback: function() {
                                 this.log("Spawning Grunt jobs..");
                                 process.chdir(cp);
