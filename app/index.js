@@ -11,30 +11,25 @@ var CordovumGenerator = module.exports = function CordovumGenerator(args, option
     this.installDependencies({ 
           skipInstall: options['skip-install'],
           callback: function() {
-                // Emit a new event - dependencies installed
-                this.emit('dependenciesInstalled');
+                this.log("Installing Cordova Lib..");
+                var cp = process.cwd();
+                var cl = path.join(cp, 'node_modules/cordova-lib')
+                process.chdir(cl);
+                this.installDependencies({
+                    skipInstall: options['skip-install'].,
+                    callback: function() {
+                                this.log("Spawning Grunt jobs..");
+                                process.chdir(cp);
+                                // Emit a new event - dependencies installed`
+                                this.emit('dependenciesInstalled');
+                              }.bind(this)
+                });
           }.bind(this)
     });
   });
 
   // Now you can bind to the dependencies installed event
   this.on('dependenciesInstalled', function() {
-      this.log("Installing Cordova Lib..");
-      var cp = process.cwd();
-      var cl = path.join(cp, 'node_modules/cordova-lib')
-      process.chdir(cl);
-      this.installDependencies({ 
-          skipInstall: options['skip-install'],
-          callback: function() {
-                // Emit a new event - sub dependencies installed
-                process.chdir(cp);
-                this.emit('cordovaLibSetup');
-          }.bind(this)
-      });
-  });
-
-  // Now you can bind to the dependencies installed event
-  this.on('cordovaLibSetup', function() {
       this.spawnCommand('grunt', ['setup'])
           .on('close', function() {
               this.emit('platformsSetup');
