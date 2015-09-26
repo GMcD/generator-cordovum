@@ -19,7 +19,8 @@ var CordovumGenerator = module.exports = function CordovumGenerator(args, option
 
   // Now you can bind to the dependencies installed event
   this.on('dependenciesInstalled', function() {
-      this.spawnCommand('cd node_modules/cordova-lib && npm install');
+      var cl = path.join(process.cwd(), 'node_modules/cordova-lib')
+      this.spawnCommand('cd ' + cl + ' && npm install');
       this.spawnCommand('grunt', ['setup'])
             .on('close', function() {
                 this.emit('platformsSetup');
