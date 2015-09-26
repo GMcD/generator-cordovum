@@ -75,7 +75,10 @@ CordovumGenerator.prototype.module = function module() {
 };
 
 CordovumGenerator.prototype.app = function app() {
+  /* Main Application Template */
   this.directory('app', 'app');
+  /* Empty Folder for compiled SASS */
+  this.mkdir('app/css');
 
   /* Use this as workspace, and Import android project, export Gradle files */
   this.mkdir('eclipse');

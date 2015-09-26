@@ -127,7 +127,7 @@ module.exports = function (grunt) {
     // Web server to test against
     connect: {
         test : {
-            config : {
+            options : {
                 port : 8001,
                 base : ''
             }
