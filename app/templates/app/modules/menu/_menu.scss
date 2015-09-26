@@ -1,0 +1,146 @@
+
+@import "_menu.buttons";
+
+$menu-width: 80%;
+$max-menu-width: 320px;
+
+/* Line Height from 50px to 70px */
+@mixin menu-item($line-height, $font-size){
+
+	$icon-size		: 50px;
+	$padding 		: ($line-height - $icon-size) / 2;
+
+	width 			:         100%;
+	line-height 	: $line-height;
+	height 			: $line-height;
+	text-transform 	:    uppercase;
+
+	span:first-child {
+		text-align 			:     center;
+		font-size 			:       26px;
+		width 				: $icon-size;
+		height 				: $icon-size;
+		color 				:     $white;
+		padding-top 		:   $padding;
+	}
+	span:last-child {
+		margin-left			: 		15px;
+		font-size			: $font-size;
+	    letter-spacing		:  		 2px;
+	}
+}
+
+.menu-image {
+	width: 100%;
+}
+
+.menu-title {
+	@include title-text();
+	font-size: 24px;
+	color: $fpt-color;
+}
+.menu-subtitle {
+	@include subtitle-text();
+	text-align: center;
+	color: $fpt-color;
+	span:first-child {
+		width: 40px;
+	}
+}
+
+#menu-template {
+	pointer-events : none;
+	position 	   : absolute;
+	top 		   : 0px;
+	left 		   : 0px !important;
+	width 		   : 100%;
+	height 		   : 100%;
+	color 		   : $fpf-color;
+
+	z-index 	   : 10000;
+
+	/* Top Left Menu */
+	#menu-anchor {
+		pointer-events: all;
+		#nav-anim {
+			font-size 	:  1.6em;
+			width 		:   50px;
+			color 		: $white;
+			text-align  : center;
+			position 	:  fixed;
+		}
+		#close-menu {
+			float 		: right;
+			width 		:  50px;
+			color 		: white;
+			font-size 	: 1.6em;
+			padding-top :   5px;
+		}
+	}
+
+	#menu-items {
+		pointer-events		: all;
+		position			: absolute;
+		top 				: 0px;
+		width 				: $menu-width;
+		max-width 			: $max-menu-width;
+		height 				: 100%;
+		text-align 			: left;
+		background 			: $fpb-color url('../img/shadow.png') no-repeat right top;
+		-webkit-transform	: translate(0, 0);
+		@include transition(-webkit-transform 0.5s ease-in-out);
+
+    	.profile-item {
+    		@include profile-item();
+			margin-top: 20px;
+			margin-bottom: 0px;
+		}
+		.menu-item {
+			@include menu-item(45px, 20px);
+		}
+		.menu-item:active, .active-item {
+			background 	: $fpt-color url('../img/shadow.png') no-repeat right top;
+			.fa {
+				color: $fpf-color !important;
+			}
+		}
+	}
+}
+
+.offScreen {
+	-webkit-transform: translate(-100%, 0) !important;
+}
+
+/*
+ * TODO: mixin
+ */
+.menu-bar {
+	height: 40px;
+	span.gp {
+		font-size: 1.6em;
+		width: 50px;
+		height: 40px; 
+		background-color: $fpb-color;
+		color: $white;
+		text-align: center;
+	}
+}
+
+@include bottom-panel();
+
+/*
+ * Sort this out - Standard approach to iOS 'window' quirks... 
+ * And one too many divs? #menu-stage && #menu-template should not be necessary
+ */
+.ios.landscape.ipad .menu-bar, .ios.landscape.ipad #menu-stage {
+	margin-top: 20px;
+}
+.ios.ipad #menu-anchor {
+	margin-top: 10px;
+}
+.ios.ipad #profile-top-stage {
+	margin-bottom   :    -20px;	
+}
+.android #menu-anchor {
+	padding-top: 5px;
+}

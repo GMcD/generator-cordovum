@@ -1,0 +1,29 @@
+/*
+ * Simple Spinner Overlay
+ */
+#toaster {
+    display         : none;
+    border-radius   : 20px;
+    position        : absolute;
+    left            : 50%;
+    bottom          : 10%;
+    height          : 90px;
+    width           : 30%;
+    margin-left     : -15%;    
+    opacity         : 0.8;
+    background      : $dark-teal;
+    text-align      : center;
+
+    #toast-text {
+        padding: 5px 12px;
+        color: $cobalt;
+    }
+    /*
+     * medium class => 32px, hence 16px to center
+     */
+    span {
+        position    : relative;
+        top         : 20%;
+        font-size   : 3em;
+    }
+}

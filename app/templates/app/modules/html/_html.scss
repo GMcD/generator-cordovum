@@ -1,0 +1,28 @@
+
+/*
+ * The Responsive Design is extended to branding.
+ * Four Palettes with Five colours are defined here.
+ */
+@import "../../scss/_colours";
+
+/*
+ * Use Bootstrap mixins mostly
+ */
+@import "../../../bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap/_mixins";
+/*
+ * Add transform from bourbon
+ */
+@import "../../../bower_components/bourbon/app/assets/stylesheets/addons/_prefixer.scss";
+@import "../../../bower_components/bourbon/app/assets/stylesheets/css3/_transform.scss";
+
+/* Responsive Mobile */
+@import "_html_inputs";
+@import "_ui_elements";
+@import "_form_buttons";
+@import "_table_columns";
+@import "_page_layouts";
+@import "_media_queries";
+
+/* Simple CSS Progess Spinner */
+@import "spinner/_indicator.base";
+@import "spinner/_indicator.spinner";

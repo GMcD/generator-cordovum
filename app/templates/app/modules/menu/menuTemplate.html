@@ -1,0 +1,48 @@
+<div id="menu-anchor">
+    <div id="menu-left">
+        <span id="close-menu" class="fa fa-times fa-2x" style="display:none"></span>
+        <span id="nav-anim" class="fa fa-bars fa-2x"></span>
+    </div>
+</div>
+<div id="menu-items" class="offScreen">
+    <div id="profile-summary" class="profile-item">
+        <img class="profile-image" src="<%= profile.avatar %>"></img>
+        <div class="menu-title"><%= display_name %></div>
+        <div class="menu-subtitle">
+            <span class="fa fa-map-marker"></span>
+            <span><%= profile.hometown %></span>
+        </div>
+    </div>
+    <div id="profile-item" class="menu-item">
+        <span class="fa fa-user"></span>
+        <span>Home</span>
+    </div>
+    <div id="auth-item" class="menu-item" style="display:none">
+        <span class="fa fa-key"></span>
+        <span>Login</span>
+    </div>
+    <div id="manage-item" class="menu-item" style="display:none">
+        <span class="fa fa-qrcode"></span>
+        <span>Manage</span>
+    </div>
+    <div id="rewards-item" class="menu-item">
+        <span class="fa fa-heart-o"></span>
+        <span>Stamps</span>
+    </div>
+    <div id="member-item" class="menu-item">
+        <span class="fa fa-coffee"></span>
+        <span>Venues</span>
+    </div>
+    <div id="vouchers-item" class="menu-item">
+        <span class="fa fa-heart"></span>
+        <span>Rewards</span>
+    </div>
+    <div id="map-item" class="menu-item">
+        <span class="fa fa-globe"></span>
+        <span>Map</span>
+    </div>
+    <div id="logout-item" class="menu-item">
+        <span class="fa fa-sign-out fa-flip-horizontal"></span>
+        <span>Sign Out</span>
+    </div>
+</div>

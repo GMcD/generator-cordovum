@@ -1,0 +1,210 @@
+/*
+ * Mobile Mixins
+ */
+/* Momentum Scrolling - causes some WebView exceptions ... */
+@mixin momentum-scroll {
+    overflow-x  : hidden;
+    overflow-y  : auto;
+    -webkit-transform: translateZ(0);
+    -webkit-overflow-scrolling: touch;
+}
+/* Unused - Position Fixed, or Absolute does this mostly ... */
+@mixin no-momentum-scroll {
+    overflow-x  : hidden;
+    overflow-y  : hidden;
+}
+/*
+ * Hardware Acceleration - Not needed with judicious use of GPU pinning...
+ */
+@mixin hardware-acceleration {
+    -webkit-transform           : translate3d(0, 0, 0);
+    -webkit-backface-visibility : hidden;
+    -webkit-perspective         : 1000;
+}
+/*
+ * Full Screen - Just like it Says
+ */
+@mixin full-screen {
+    margin      :      0px;
+    padding     :      0px;
+    width       :     100%;
+    height      :     100%;
+}
+/*
+ * Position every 'Page' absolutely at top left
+ *  * Menu Page 40px high
+ *  * Content Page 40px top margin, relative position (always?)
+ */
+$top-bar-height : 40px;
+@mixin full-page {
+    @include full-screen();
+    position    : absolute;
+    margin-top  : $top-bar-height;
+}
+/*
+ * Top Bar of 40px
+ */
+@mixin menu-stage {
+    @include full-screen();
+    position        : absolute;
+    pointer-events  : none;
+    /* height       : $top-bar-height; */ /* This is done with pointer-events and relative, margin-top etc... */
+    z-index         : 100;
+    span {
+        @include menu-button();
+    }
+}
+@mixin menu-button {
+    width       : 50px;
+    height      : $top-bar-height;
+}
+
+/* Image Thumb - unused */
+@mixin image-thumb {
+    width           : 64px;
+    padding         :  5px;
+    margin-right    :  5px;
+    border-radius   :  8px;
+    float           : left;
+}
+@mixin profile-item {
+    text-align          : center;
+    margin              : 12px 0px;
+    img {
+        width           : 150px;
+        height          : 150px;
+        border-radius   : 50%;
+        border          : 4px solid white;
+    }    
+}
+
+/*
+ * Text Mix Ins
+ */
+@mixin title-text {
+    text-align  : center;
+    padding-top :    5px;
+    font-weight :   bold;
+    /* Seem to match in order? */
+    @include media(iphone4){
+        font-size : 18px;
+    }
+    @include media(iphone5){
+        font-size : 20px;
+    }
+    @include media(iphone6){
+        font-size : 24px;
+    }
+}
+@mixin subtitle-text {
+    text-align   : left;
+    padding-top  :  5px;
+    padding-left : 10px;
+    font-size    : 20px;
+    font-weight  : bold;
+}
+@mixin subsubtitle-text {
+    text-align   : left;
+    padding-top  :  5px;
+    padding-left : 10px;
+    font-size    : 16px;
+    font-weight  : bold;
+}
+@mixin footer-text {
+    text-align     :  right;
+    margin-right   :    8px;
+    padding-bottom :    3px;
+    font-size      :   18px;
+    font-weight    : normal;
+    opacity        :    0.2;
+}
+
+@mixin button-red {
+    font-size        :                1.8em;
+    padding          :            10px 20px;
+    color            :           $fpb-color;
+    border           : 1px solid $fpb-color;    
+    background-color :           $fpf-color;
+}
+
+/*
+ * This needs to go in a mixin...
+ */
+.btn:active {
+    opacity: 0.4;
+}
+
+/* Lower Half of Screen - roughly */
+@mixin bottom-panel {
+    .bottom-panel {
+        position        : absolute;
+        bottom          :      0px;
+        width           :     100%;
+        height          :    250px;
+        max-height      :      43%;
+        text-align      :   center;
+    }
+    .ios.portrait .bottom-panel {
+        bottom: 40px;
+    }
+}
+
+/* Bottom Button Bar */
+@mixin bottom-bar {
+    position    : absolute;
+    width       :     100%;
+    bottom      :      10%;
+    text-align  :   center;
+    button {
+        @include button-red();
+    }
+}
+
+/*
+ * Standard Button, Icon on Left, foreground, background and border colors
+ */
+@mixin icon-button($fore, $back, $bord){
+    width       : 290px;
+    color       : $fore;
+    padding     : 0px;
+    height      : 50px;
+    border      : 2px solid $bord;
+    margin-top  : 10px;
+    text-align  : left;
+    font-size   : 1.6em;
+    background-color    : $back;
+    -webkit-appearance  : none;
+    span:first-child {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        padding-top:12px;
+        left:-3px;
+        top:-2px;
+        text-align: center;
+        background-color:navy;
+        margin-right: 10px;
+    }
+}
+
+/*
+ * Banner Image
+ */
+@mixin banner-image(){
+    width            :   100%;
+    height           :  150px;
+    background-color :  white;
+}
+
+/*
+ * Android needs the left property on the same element as the transition, ios inherits 
+ * Name and Origin should be parameters?
+ */
+@mixin slide-left {
+    /* left        : 0;
+    @include transition(left 0.8s ease); */
+
+    -webkit-transform   : translate(0, 0);
+    @include transition(-webkit-transform 0.8s ease);
+    @include hardware-acceleration();
+}

@@ -1,0 +1,74 @@
+
+/* TODO: gp this... */
+.fa-envelope-o, .fa-sign-in {
+	color: white;
+}
+
+.gp {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Menu Bars - Hamburger
+ */
+.gp-menu-bars:before {
+	content: "\f0c9";
+}
+/*
+ * Next : Angle Right
+ */
+.gp-angle-right {
+	font-size		: 1.5em !important; 
+	float 			: right;
+	margin-top 		: -5px;
+	padding-right 	: 10px;
+}
+.gp-angle-right:before {
+	content: "\f105";
+}
+/*
+ * Left Arrow
+ */
+.gp-menu-back {
+	font-size: 2.0em !important; 
+	padding-top: 0px !important;
+	float: left;
+}
+.gp-menu-back:before {
+	content: "\f104";
+}
+/*
+ * Search
+ */
+.gp-search {
+	font-size:1.5em;
+	padding-top:5px;	
+}
+.gp-search:before {
+	content: "\f002";
+}
+/*
+ * Share
+ */
+.gp-external-link {
+	font-size:1.5em;
+	padding-top: 8px !important;
+}
+.gp-external-link:before {
+	content: "\f08e";
+}
+/*
+ * User Login
+ */
+.gp-user {
+	padding-top: 5px !important;
+}
+.gp-user:before {
+	content: "\f007"
+}
+

@@ -1,0 +1,30 @@
+/*
+ * Flip the TwoPager to landscape
+ */
+.landscape .page-one {
+	width : 50% !important;
+}
+.landscape .page-two {
+	/* left  : 50% !important; */
+	-webkit-transform   : translate(-50%, 0) !important;
+	width : 50% !important;
+}
+/*
+ * Page Two
+ */
+.showPageTwo {
+    /* left: -100% !important; */
+	-webkit-transform   : translate(-100%, 0) !important;
+}
+.landscape .showPageTwo {
+	/* left  : 0% !important; */
+	-webkit-transform   : translate(0%, 0) !important;
+}
+.hidePageOne {
+    /* left: 100% !important; */
+    -webkit-transform   : translate(100%, 0) !important;
+}
+
+.showRight {
+    left: -100% !important;
+}

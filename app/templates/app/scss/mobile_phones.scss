@@ -1,0 +1,39 @@
+
+/*
+ * Mixin to wrap content in media queries for iPhone sizes
+ * usage - 
+ *     @include media(iphone4) { font-size : 20px; }
+ *
+ */
+@mixin media($phone) {
+  
+    $iphone4   : "only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)";
+    $iphone4-p : $iphone4 + " and (orientation: portrait)";
+    $iphone4-l : $iphone4 + " and (orientation: landscape)";
+
+    $iphone5   : "only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2)";
+    $iphone5-p : $iphone5 + " and (orientation: portrait)";
+    $iphone5-l : $iphone5 + " and (orientation: landscape)";
+
+    $iphone6   : "only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2)";
+    $iphone6-p : $iphone6 + " and (orientation: portrait)";
+    $iphone6-l : $iphone6 + " and (orientation: landscape)";
+
+    $iphone6plus   : "only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2)";
+    $iphone6plus-p : $iphone6plus + " and (orientation: portrait)";
+    $iphone6plus-l : $iphone6plus + " and (orientation: landscape)";
+
+    @if $phone == iphone4 {
+      @media #{$iphone4} { @content; }
+    }
+    @else if $phone == iphone5 {
+      @media #{$iphone5} { @content; }
+    }
+    @else if $phone == iphone6 {
+      @media #{$iphone6}  { @content; }
+    }
+    @else if $phone == iphone6plus {
+      @media #{$iphone6plus}  { @content; }
+    }
+
+}
