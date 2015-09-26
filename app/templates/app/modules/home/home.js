@@ -5,6 +5,8 @@ define([ 'jquery', 'underscore', 'backbone', 'marionette', 'text!home/homeTempla
      * Simple Home View
      */
     var HomeView = Marionette.ItemView.extend({
+        id          : 'home-view',
+        class       : 'home-view',
         template : function(model) {
             console.log('Templating Home View...');
             return _.template(homeTemplate)(model);

@@ -7,6 +7,7 @@
 
 $white 		: white;
 $red 		: red;
+$orange 	: orange;
 $black 		: black;
 $purple 	: #3D3B5E;
 /* 50 Shades of Grey */
@@ -59,10 +60,10 @@ $half-white-opaque: rgba(255, 255, 255, 0.8);
 */
 
 /* Foreground Palette */
-$fpt-color: $white;
+$fpt-color: $black;
 $fpf-color: $black;
-$fpb-color: $teal;
-$fph-color: $half-opaque;
+$fpb-color: $white;
+$fph-color: $orange;
 $fpd-color: $red;
 
 /* Background Palette */

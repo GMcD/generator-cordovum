@@ -1,5 +1,5 @@
 /**
- * Mobile Status Bar and Orientation Classes
+ * Mobile Status Bar iOS Portrait
  */
 .ios.portrait {
 	#ios-status {
@@ -7,23 +7,6 @@
 		width: 100%;
 		height: 20px;
 	}
-}
-
-/*
- * Sort this out - Standard approach to iOS 'window' quirks... 
- * And one too many divs? #menu-stage && #menu-template should not be necessary
- */
-.ios.landscape.ipad .menu-bar, .ios.landscape.ipad #menu-stage {
-    margin-top: 20px;
-}
-.ios.ipad #menu-anchor {
-    margin-top: 10px;
-}
-.ios.ipad #profile-top-stage {
-    margin-bottom   :    -20px; 
-}
-.android #menu-anchor {
-    padding-top: 5px;
 }
 
 /*

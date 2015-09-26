@@ -1,7 +1,7 @@
 
 /* TODO: gp this... */
 .fa-envelope-o, .fa-sign-in {
-	color: white;
+	color: $fpt-color;
 }
 
 .gp {
@@ -16,6 +16,10 @@
 /*
  * Menu Bars - Hamburger
  */
+.gp-menu-bars {
+	font-size 		: 1.6em !important;
+	padding-top 	: 5px;
+}
 .gp-menu-bars:before {
 	content: "\f0c9";
 }

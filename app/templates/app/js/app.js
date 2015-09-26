@@ -8,7 +8,11 @@ define(['config','jquery','underscore','backbone','marionette','home/home', 'men
       },
     });
 
-    /* Set Up Marionette Menu and Main Stages */
+    /**
+     *  Set Up Marionette Menu and Main Stages 
+     *    * The Menu Stage is fixed, top left corner, z-index up
+     *    * The Main Stage is where the action takes place.
+     */
     App.addRegions({
         menuRegion  : '#menu-stage',
         mainRegion  : '#main-stage'
@@ -33,7 +37,7 @@ define(['config','jquery','underscore','backbone','marionette','home/home', 'men
      */
     App.listenTo(App.vent, 'home:show', function(){
         var home    = new Home.View();
-        App.menuRegion.show(home);
+        App.mainRegion.show(home);
     });
 
     return App;

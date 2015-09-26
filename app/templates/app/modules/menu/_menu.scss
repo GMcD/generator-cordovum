@@ -1,8 +1,11 @@
-
+/*
+ * Font Awesome Tweaked to be square, centered and same size.
+ * namespaced gp, not fa.
+ */
 @import "_menu.buttons";
 
 $menu-width: 80%;
-$max-menu-width: 320px;
+$max-menu-width: 240px;
 
 /* Line Height from 50px to 70px */
 @mixin menu-item($line-height, $font-size){
@@ -13,25 +16,22 @@ $max-menu-width: 320px;
 	width 			:         100%;
 	line-height 	: $line-height;
 	height 			: $line-height;
-	text-transform 	:    uppercase;
 
+	/* The Menu Icon */
 	span:first-child {
 		text-align 			:     center;
 		font-size 			:       26px;
 		width 				: $icon-size;
 		height 				: $icon-size;
-		color 				:     $white;
+		color 				: $fpt-color;
 		padding-top 		:   $padding;
 	}
+	/* The Menu Item Label */
 	span:last-child {
 		margin-left			: 		15px;
 		font-size			: $font-size;
 	    letter-spacing		:  		 2px;
 	}
-}
-
-.menu-image {
-	width: 100%;
 }
 
 .menu-title {
@@ -57,25 +57,16 @@ $max-menu-width: 320px;
 	height 		   : 100%;
 	color 		   : $fpf-color;
 
-	z-index 	   : 10000;
+	z-index 	   : 1000;
 
 	/* Top Left Menu */
-	#menu-anchor {
+	#nav-anim {
 		pointer-events: all;
-		#nav-anim {
-			font-size 	:  1.6em;
-			width 		:   50px;
-			color 		: $white;
-			text-align  : center;
-			position 	:  fixed;
-		}
-		#close-menu {
-			float 		: right;
-			width 		:  50px;
-			color 		: white;
-			font-size 	: 1.6em;
-			padding-top :   5px;
-		}
+		width 		:   	50px;
+		color 		: $fpt-color;
+		text-align  : 	  center;
+		position 	:  	   fixed;
+		z-index 	: 		1001;
 	}
 
 	#menu-items {
@@ -90,35 +81,15 @@ $max-menu-width: 320px;
 		-webkit-transform	: translate(0, 0);
 		@include transition(-webkit-transform 0.5s ease-in-out);
 
-    	.profile-item {
-    		@include profile-item();
-			margin-top: 20px;
-			margin-bottom: 0px;
-		}
 		.menu-item {
 			@include menu-item(45px, 20px);
 		}
 		.menu-item:active, .active-item {
-			background 	: $fpt-color url('../img/shadow.png') no-repeat right top;
+			background 	: $fph-color url('../img/shadow.png') no-repeat right top;
 			.fa {
 				color: $fpf-color !important;
 			}
 		}
-	}
-}
-
-/*
- * TODO: mixin
- */
-.menu-bar {
-	height: 40px;
-	span.gp {
-		font-size: 1.6em;
-		width: 50px;
-		height: 40px; 
-		background-color: $fpb-color;
-		color: $white;
-		text-align: center;
 	}
 }
 
