@@ -11,11 +11,6 @@ var CordovumGenerator = module.exports = function CordovumGenerator(args, option
     this.installDependencies({ 
           skipInstall: options['skip-install'],
           callback: function() {
-                this.log("Installing Cordova Lib..");
-                var cp = process.cwd();
-                var cl = path.join(cp, 'node_modules/cordova-lib')
-                process.chdir(cl);
-                this.npmInstall();
                 this.emit('dependenciesInstalled');
           }.bind(this)
     });
@@ -23,6 +18,18 @@ var CordovumGenerator = module.exports = function CordovumGenerator(args, option
 
   // Now you can bind to the dependencies installed event
   this.on('dependenciesInstalled', function() {
+      this.log("Installing Cordova Lib..");
+      var cp = process.cwd();
+      var cl = path.join(cp, 'node_modules/cordova-lib')
+      process.chdir(cl);
+      this.spawnCommand('npm', ['install'])
+          .on('close', function() {
+              this.emit('cordovaLibInstalled');
+          }.bind(this));
+  });
+
+  // Now you can bind to the dependencies installed event
+  this.on('cordovaLibInstalled', function() {
       this.spawnCommand('grunt', ['setup'])
           .on('close', function() {
               this.emit('platformsSetup');
