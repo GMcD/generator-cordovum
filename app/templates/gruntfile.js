@@ -120,9 +120,18 @@ module.exports = function (grunt) {
             options: {
                 command: 'platform',
                 action: 'add',
-                platforms: ['ios', 'android']
+                platforms: ['ios', 'android', 'browser']
             }
         },
+        add_plugins: {
+        options: {
+            command: 'plugin',
+            action: 'add',
+            plugins: [
+                'file',
+            ]
+        }
+    },
     },
     // Web server to test against
     connect: {
@@ -164,6 +173,9 @@ module.exports = function (grunt) {
     watch: {
         files: ['app/**', '*.js', 'cordovum/config.xml', '!app/css/**'],
         tasks: ['cordova'],
+        options: {
+            livereload: true,
+        },
     },
     clean: {
         prep: {

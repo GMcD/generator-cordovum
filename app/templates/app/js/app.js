@@ -1,5 +1,5 @@
 /* App */
-define(['config','jquery','underscore','backbone','marionette','modules/home/home', 'modules/menu/menu' ], 
+define(['config','jquery','underscore','backbone','marionette','home/home', 'menu/menu' ], 
   function(config, $, _, Backbone, Marionette, Home, Menu ){
 
     /* Main App */
