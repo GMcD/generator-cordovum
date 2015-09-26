@@ -45,9 +45,9 @@ CordovumGenerator.prototype.askFor = function askFor() {
   console.log("Remember to run like this: ");
   console.log("\t$ mkdir app; cd app; git init .; yo cordovum; git add .; git commit -m `My New App from Yeoman`");
 
-  var prompts = [ { name: 'appName', message: 'What would you like to call your App? ', default: 'news'},
-                  { name: 'appUrl', message: 'Application Url Identifier : ', default: 'com.projectscapa'},
-                  { name: 'appDescription', message: 'Short application description : ', default: 'News Reader App'},
+  var prompts = [ { name: 'appName', message: 'What would you like to call your App? ', default: 'Wills'},
+                  { name: 'appUrl', message: 'Application Url Identifier : ', default: 'com.lifelongwills'},
+                  { name: 'appDescription', message: 'Short application description : ', default: 'Life Long Wills'},
                   { name: 'appAuthor', message: 'App Author email', default: 'gary.macdonald@projectscapa.com'}
                 ];
 

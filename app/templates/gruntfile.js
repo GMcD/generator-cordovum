@@ -41,7 +41,7 @@ module.exports = function (grunt) {
          */
         src: [ 'app/**/*.js', 
                 '!app/js/libs/jquery.jscrollpane.js', '!app/js/libs/jquery.tinysort.js', '!app/js/libs/jsonform.js', '!app/js/libs/jsv.js',
-                '!app/tests/*.js' ]
+                '!app/modules/**/test_*.js' ]
       },
     },
 
@@ -51,7 +51,6 @@ module.exports = function (grunt) {
             files: [
                 { src: 'app/css/*', dest: appwww, expand: true },
                 { src: 'app/js/**', dest: appwww, expand: true },
-                { src: 'app/tpl/**', dest: appwww, expand: true },
                 { src: 'app/img/**', dest: appwww, expand: true },
                 { src: 'app/fonts/**', dest: appwww, expand: true },
                 { src: 'app/app.html', dest: appwww, expand: true },

@@ -1,15 +1,15 @@
 define(['jquery'], function($){
     
-	var toast = {
     /* Interval for Toaster Dots */    
-	var dotInterval;
+    var dotInterval;
     /* Default text for Toaster */    
-	var toastText;
+    var toastText;
 
-	toast.toaster = {
-		/*
-         * Add dots to Toaster
-         */
+	var toast = {
+
+	   /*
+        * Add dots to Toaster
+        */
         addDots : function (){
             var t = $('#toast-text').text();
             if (t.length > 25){
@@ -18,15 +18,17 @@ define(['jquery'], function($){
             t = t + '.';
             $('#toast-text').text(t);
         },
+
         /*
          * Start Toaster dots
          */
         start : function (text){
         	toastText = text;
             $('#toaster').show();
-            dotInterval = setInterval(toast.toaster.addDots, 750);
-            toast.toaster.addDots();
+            dotInterval = setInterval(toast.addDots, 750);
+            toast.addDots();
         },
+            
         /*
          * Stop Toaster dots
          */
