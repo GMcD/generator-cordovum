@@ -9,20 +9,23 @@
   "author": "<%= appAuthor %>",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "~0.4",
-    "grunt-contrib-sass": "~0.8",
-    "grunt-contrib-jasmine": "~0.5",
-    "grunt-contrib-requirejs": "~0.4",
-    "grunt-template-jasmine-requirejs": "~0.1",
-    "connect": "~2.11.0",
-    "grunt-contrib-watch": "~0.6",
-    "grunt-contrib-copy": "~0.6",
-    "grunt-contrib-rename": "0.0.3",
-    "grunt-contrib-jshint": "~0.10",
-    "grunt-contrib-connect": "~0.5",
-    "grunt-cordovacli": "~0.8",
-    "grunt-contrib-clean": "~0.6",
-    "imagemagick": "0.1.x",
-    "ncp": "~0.6.0"
+    "grunt": "^0.4",
+    "grunt-contrib-sass": "^0.8",
+    "grunt-contrib-jasmine": "^0.5",
+    "grunt-contrib-requirejs": "^0.4",
+    "grunt-template-jasmine-requirejs": "^0.1",
+    "connect": "^2.11",
+    "grunt-contrib-watch": "^0.6",
+    "grunt-contrib-copy": "^0.6",
+    "grunt-contrib-rename": "^0.0.3",
+    "grunt-contrib-jshint": "^0.10",
+    "grunt-contrib-connect": "^0.5",
+    "grunt-cordovacli": "^0.8",
+    "grunt-contrib-clean": "^0.6",
+    "imagemagick": "^0.1",
+    "ncp": "^0.6"
+  },
+  "dependencies": {
+    "cordova": "^5.3.3"
   }
 }
