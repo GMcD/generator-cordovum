@@ -107,10 +107,6 @@ $max-menu-width: 320px;
 	}
 }
 
-.offScreen {
-	-webkit-transform: translate(-100%, 0) !important;
-}
-
 /*
  * TODO: mixin
  */
@@ -128,19 +124,3 @@ $max-menu-width: 320px;
 
 @include bottom-panel();
 
-/*
- * Sort this out - Standard approach to iOS 'window' quirks... 
- * And one too many divs? #menu-stage && #menu-template should not be necessary
- */
-.ios.landscape.ipad .menu-bar, .ios.landscape.ipad #menu-stage {
-	margin-top: 20px;
-}
-.ios.ipad #menu-anchor {
-	margin-top: 10px;
-}
-.ios.ipad #profile-top-stage {
-	margin-bottom   :    -20px;	
-}
-.android #menu-anchor {
-	padding-top: 5px;
-}

@@ -61,10 +61,3 @@ body {
     @include full-screen();
 }
 
-.ios.portrait {
-	#ios-status {
-		display: block;
-		width: 100%;
-		height: 20px;
-	}
-}

@@ -62,18 +62,17 @@ CordovumGenerator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
-// CordovumGenerator.prototype.module = function module() {
+CordovumGenerator.prototype.module = function module() {
 
-//   // this.copy('_package.json', 'package.json');
-//   // this.copy('_bower.json', 'bower.json');
-//   // this.copy('_gruntfile.js', 'gruntfile.js');
-
-// };
-
-// CordovumGenerator.prototype.projectfiles = function projectfiles() {
-//   // this.copy('gitignore', '.gitignore');
-//   // this.copy('jshintrc', '.jshintrc');
-// };
+  this.copy('.gitignore',   '.gitignore');
+  this.copy('.jshintrc',    '.jshintrc');
+  this.copy('bower.json',   'bower.json');
+  this.copy('gruntfile.js', 'gruntfile.js');
+  this.copy('icons.js',     'icons.js');
+  this.copy('server.js',    'server.js');
+  this.copy('package.json', 'package.json');
+  
+};
 
 CordovumGenerator.prototype.app = function app() {
   this.directory('app', 'app');
