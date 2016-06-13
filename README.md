@@ -19,11 +19,11 @@ To locally update generator-cordovum from git, run:
 $ pushd /usr/local/lib/node_modules/generator-cordovum; sudo git pull; popd
 ```
 
-Later, once in the npm registry, install generator-cordovum by running:
-
-```
-$ npm install -g generator-cordovum
-```
+> Later, once in the npm registry, install generator-cordovum by running:
+> 
+> ```
+> $ npm install -g generator-cordovum
+> ```
 
 Setup an __empty__ folder (and repository) for your app, change into the folder, and initiate the generator.
 
@@ -34,11 +34,6 @@ $ git init .
 $ yo cordovum;
 $ git add .
 $ git commit -m "My New App from Yeoman"
-$ cd cordovum
-$ cordova plugin add org.apache.cordova.device
-$ cordova plugin add org.apache.cordova.file-transfer
-$ cordova plugin add cordova-plugin-browsersync
-$ cordova run browser -- --reload-live
 ```
 
 Browse to <code>http://localhost:8000/app/app.html</code>
@@ -51,22 +46,40 @@ Run `grunt cordovacli:build` to generate the APK and IPA builds.
 
 # Sub Generators
 
-Cordovum comes with two sub-generators
-  * Silo - This will generate a Model, Collection, View, Style and integrate with the App build system.
-  	** Note - This does not auto-generate a route within the Router, at this time.
-  * Jazz - This will generate a Jasmine test file for the endpoint model and view.
+Cordovum comes with two sub-generators, Silo and Jazz. These are nicknames for Modules and Tests respectively.
+
+## Silo
+  The Silo generator generates 
+     * Model
+     * Collection
+     * View
+     * Sass Style
+     * Route
+     * RequireJS
+     * Define
+     * Module
+     * and integrates with the App build system.
+> Note - This does not auto-generate a Menu Item at this time. The expectation is that every top level module
+> would have a menu item, but not all modules are top lovel modules. A flag on invocation may be the approach here.
+
+## Jazz
+  The Jazz generator generates a Jasmine test file, Spec,  for the module endpoint.
 
 # Add Plugins
 
 To Install the cordovum-preferences plugin, `cd appname;` and run
 
 ```
-cordova plugin add org.apache.cordova.device
-cordova plugin add org.apache.cordova.file-transfer
-cordova plugin add org.apache.cordova.network-information
-cordova plugin add https://github.com/GMcD/cordovum-preferences.git
+$ cd app/cordovum
+$ cordova plugin add org.apache.cordova.device
+$ cordova plugin add org.apache.cordova.file-transfer
+$ cordova plugin add org.apache.cordova.network-information
+$ cordova plugin add cordova-plugin-browsersync
+$ cordova run browser -- --reload-live
+$ cordova plugin add https://github.com/GMcD/cordovum-preferences.git
 ...
 ```
+> The cordova-plugin-browsersync plugin consumes too many file handles on MacOSX.
 
 The plugin incorporates a Settings bundle for iOS and a preferences xml file for Android.
 
