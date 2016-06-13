@@ -1,5 +1,5 @@
 /* App */
-define(['config','jquery','underscore','backbone','fastclick','imgcache','utils','app','localstorage'], 
+define(['config','jquery','underscore','backbone','fastclick','imgcache','utils','application','localstorage'], 
   function(config, $, _, Backbone, FastClick, ImageCache, Utils, App){
 
     /*

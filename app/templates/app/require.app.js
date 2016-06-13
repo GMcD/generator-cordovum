@@ -33,7 +33,7 @@ require.config({
 /* App Basics */
     utils           : 'app/js/libs/utils',
     config          : 'app/js/libs/config',
-    app             : 'app/js/app',
+    application     : 'app/js/app',
     device          : 'app/js/device',
 /* Modules */
     menu            : 'app/modules/menu',

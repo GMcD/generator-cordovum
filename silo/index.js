@@ -85,12 +85,12 @@ CordovumGenerator.prototype.addListener = function addListener() {
   var hook   = '/*** Yeoman Placeholder ***/',
       path   = 'app/js/app.js',
       file   = this.readFileAsString(path),
-      insert =  "    /* " +
-                "     * Listen for " + this._.capitalize(this.siloName) + " Layout Show " +
-                "     */ " +
-                "    App.listenTo(App.vent, '" + this.siloName + ":show', function(){" +
-                "        var " + this.siloName + "    = new " + this._.capitalize(this.siloName) + ".View();" +
-                "        App.mainRegion.show(" + this.siloName + ");" +
+      insert =  "    /* \n" +
+                "     * Listen for " + this._.capitalize(this.siloName) + " Layout Show \n" +
+                "     */ \n" +
+                "    App.listenTo(App.vent, '" + this.siloName + ":show', function(){\n" +
+                "        var " + this.siloName + "    = new " + this._.capitalize(this.siloName) + ".View();\n" +
+                "        App.mainRegion.show(" + this.siloName + ");\n" +
                 "    });\n" + hook;
 
   if (file.indexOf(insert) === -1) {

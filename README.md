@@ -16,6 +16,7 @@ $ npm install -g yo
 To locally update generator-cordovum from git, run:
 
 ```
+$ git commit -am "<Your Commit Message>" && git push
 $ pushd /usr/local/lib/node_modules/generator-cordovum; sudo git pull; popd
 ```
 
@@ -70,6 +71,14 @@ Cordovum comes with two sub-generators, Silo and Jazz. These are nicknames for M
      * Module
 
      * and integrates with the App build system.
+
+To Run Silo generator, in the parent directory of the app....
+```
+$ cd ..
+$ yo cordovum:silo
+$ voucher
+
+```
 
 > Note - This does not auto-generate a Menu Item at this time. The expectation is that every top level module
 > would have a menu item, but not all modules are top lovel modules. A flag on invocation may be the approach here.
