@@ -41,7 +41,7 @@ CordovumGenerator.prototype.addSassImport = function addSassImport() {
   var hook   = '/*** Yeoman Placeholder ***/',
       path   = 'app/scss/app.scss',
       file   = this.readFileAsString(path),
-      insert = '@import "_' + this.siloName + '";\n' + hook;
+      insert = '@import "../modules/' + this.siloName + '/_' + this.siloName + '";\n' + hook;
 
   if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, insert));
@@ -74,7 +74,7 @@ CordovumGenerator.prototype.addModule = function addModule() {
   var hook   = '/*** Yeoman Module Placeholder ***/',
       path   = 'app/js/app.js',
       file   = this.readFileAsString(path),
-      insert = ", " + _.capitalize(this.siloName) + hook;
+      insert = ", " + this._.capitalize(this.siloName) + hook;
 
   if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, insert));
@@ -86,10 +86,10 @@ CordovumGenerator.prototype.addListener = function addListener() {
       path   = 'app/js/app.js',
       file   = this.readFileAsString(path),
       insert =  "    /* " +
-                "     * Listen for " + _.capitalize(this.siloName) + " Layout Show " +
+                "     * Listen for " + this._.capitalize(this.siloName) + " Layout Show " +
                 "     */ " +
                 "    App.listenTo(App.vent, '" + this.siloName + ":show', function(){" +
-                "        var " + this.siloName + "    = new " + _.capitalize(this.siloName) + ".View();" +
+                "        var " + this.siloName + "    = new " + this._.capitalize(this.siloName) + ".View();" +
                 "        App.mainRegion.show(" + this.siloName + ");" +
                 "    });\n" + hook;
 
