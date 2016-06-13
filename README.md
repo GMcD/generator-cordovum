@@ -34,13 +34,15 @@ $ git init .
 $ yo cordovum;
 $ git add .
 $ git commit -m "My New App from Yeoman"
+$ cordova run browser
 ```
 
-Browse to <code>http://localhost:8000/app/app.html</code>
+Cordova will open a session at <code>http://localhost:8000/app/app.html</code> for browsing.
+Browse to <code>http://localhost:8000/app/jasmine.html</code> to run integrated tests.
 
-Start `grunt watch` at the project root to auto generate assets and prepare XCode or Android Studio projects.
+Start `grunt watch` at the project root to auto generate assets and prepare XCode, Android Studio and Browser projects.
 
-Run `nodemon ./server.js` at the project root for Chrome sessions - browse to http://localhost:8080/app/app.html.
+> Auto Generating here means taking the app folder, running sass, require compile, etc, and generating the normal cordova www folder.
 
 Run `grunt cordovacli:build` to generate the APK and IPA builds.
 
@@ -50,15 +52,25 @@ Cordovum comes with two sub-generators, Silo and Jazz. These are nicknames for M
 
 ## Silo
   The Silo generator generates 
+
      * Model
+
      * Collection
+
      * View
+
      * Sass Style
+
      * Route
+
      * RequireJS
+
      * Define
+
      * Module
+
      * and integrates with the App build system.
+
 > Note - This does not auto-generate a Menu Item at this time. The expectation is that every top level module
 > would have a menu item, but not all modules are top lovel modules. A flag on invocation may be the approach here.
 
