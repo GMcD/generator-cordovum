@@ -74,7 +74,7 @@ CordovumGenerator.prototype.addModule = function addModule() {
   var hook   = '/*** Yeoman Module Placeholder ***/',
       path   = 'app/js/app.js',
       file   = this.readFileAsString(path),
-      insert = _.capitalize(this.siloName) + ", " + hook;
+      insert = ", " + _.capitalize(this.siloName) + hook;
 
   if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, insert));

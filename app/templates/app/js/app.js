@@ -1,6 +1,6 @@
 /* App */
-define(['config','jquery','underscore','backbone','marionette','home/home', 'menu/menu' ], 
-  function(config, $, _, Backbone, Marionette, Home, Menu ){
+define(['config','jquery','underscore','backbone','marionette','home/home', 'menu/menu', /*** Yeoman Define Placeholder ***/ ], 
+  function(config, $, _, Backbone, Marionette, Home, Menu/*** Yeoman Module Placeholder ***/ ){
 
     /* Main App */
     App = new Marionette.Application({
@@ -39,6 +39,7 @@ define(['config','jquery','underscore','backbone','marionette','home/home', 'men
         var home    = new Home.View();
         App.mainRegion.show(home);
     });
+    /*** Yeoman Placeholder ***/
 
     return App;
 });
