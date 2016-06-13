@@ -1,6 +1,6 @@
 /* App */
-define(['config','jquery','underscore','fastclick','imgcache','utils','app'], 
-  function(config, $, _, FastClick, ImageCache, Utils, App){
+define(['config','jquery','underscore','backbone','fastclick','imgcache','utils','app','localstorage'], 
+  function(config, $, _, Backbone, FastClick, ImageCache, Utils, App){
 
     /*
      * Device Waiting

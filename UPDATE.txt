@@ -1,0 +1,14 @@
+
+npm update grunt -g
+npm update yo -g
+npm update bower -g
+npm update cordova -g
+npm update ios-sim -g
+
+# - hello world app seems not to install automatically
+cd /usr/local/lib/node_modules/cordova/node_modules/cordova-lib
+npm install
+
+# - or in cordovum
+cd /Users/work/Documents/Code/LifeLongWills/v3/node_modules/cordova-lib
+npm install

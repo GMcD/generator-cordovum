@@ -11,8 +11,9 @@ Automatic
 * Add app/module to require.app.js
 * Add module/module to app.js 
 * Add module:show Listener to App
-* Add module:show Trigger to Menu
 * Add moduleLayout.html to app/Module
+
+* Add module:show Trigger to Menu
 * Add { src: 'app/manage/**', dest: appwww, expand: true }, to Gruntfile
 
 Manual

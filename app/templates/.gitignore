@@ -1,3 +1,6 @@
+# sed backup files
+*.bak
+
 # ANDROID / ECLIPSE
 
 # built application files
@@ -62,10 +65,13 @@ _SpecRunner.html
 
 node_modules/
 app/css/
+dist/
 
 # Relocated assets
 cordovum/platforms/android/platform_www/
 cordovum/platforms/android/assets/
+cordovum/platforms/browser/platform_www/
+cordovum/platforms/browser/www/
 cordovum/platforms/ios/platform_www/
 cordovum/platforms/ios/www/
 cordovum/www/

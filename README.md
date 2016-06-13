@@ -5,7 +5,7 @@ A Yeoman Generator for [Cordova](http://cordova.apache.org).
 
 ## Getting Started
 
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. 
+Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive.
 
 ```
 $ npm install -g yo
@@ -19,7 +19,7 @@ To locally update generator-cordovum from git, run:
 $ pushd /usr/local/lib/node_modules/generator-cordovum; sudo git pull; popd
 ```
 
-Later, once in the npm registery, install generator-cordovum by running:
+Later, once in the npm registry, install generator-cordovum by running:
 
 ```
 $ npm install -g generator-cordovum
@@ -34,11 +34,18 @@ $ git init .
 $ yo cordovum;
 $ git add .
 $ git commit -m "My New App from Yeoman"
+$ cd cordovum
+$ cordova plugin add org.apache.cordova.device
+$ cordova plugin add org.apache.cordova.file-transfer
+$ cordova plugin add cordova-plugin-browsersync
+$ cordova run browser -- --reload-live
 ```
+
+Browse to <code>http://localhost:8000/app/app.html</code>
 
 Start `grunt watch` at the project root to auto generate assets and prepare XCode or Android Studio projects.
 
-Run `nodemon ./server.js` at the project root for Chrome sessions - browse to http://localhost:8080/app/app.html. 
+Run `nodemon ./server.js` at the project root for Chrome sessions - browse to http://localhost:8080/app/app.html.
 
 Run `grunt cordovacli:build` to generate the APK and IPA builds.
 
@@ -51,10 +58,11 @@ Cordovum comes with two sub-generators
 
 # Add Plugins
 
-To Install the cordovum-preferences plugin, `cd appname;` and run 
+To Install the cordovum-preferences plugin, `cd appname;` and run
 
 ```
 cordova plugin add org.apache.cordova.device
+cordova plugin add org.apache.cordova.file-transfer
 cordova plugin add org.apache.cordova.network-information
 cordova plugin add https://github.com/GMcD/cordovum-preferences.git
 ...
@@ -64,10 +72,26 @@ The plugin incorporates a Settings bundle for iOS and a preferences xml file for
 
 # Project Configuration
 
-The iOS project file will need Target Properties set for 
-  * supported orientations (ALL), 
-  * View Controller-based status bar appearance (NO), and 
+The iOS project file will need Target Properties set for
+  * supported orientations (ALL),
+  * View Controller-based status bar appearance (NO), and
   * status bar initially hidden (YES).
+
+# Hockey Deploy
+
+To integrate with HockeyApp
+  * Edit config.xml, add
+	* 	android-versionCode="1"
+	* 	ios-CFBundleVersion="0.0.1"
+		** below <widget ... version="0.0.1" />
+  * Add Podfile to platforms/ios
+    ** pod "HockeySDK", "~> 3.8"
+  * run `pod install`
+		** add BUILD_ALL_ARCHS
+		** add $(OBJROOT)/UninstalledProducts/include to BuildSettings->Header Search Paths
+			in Workspace Project Target
+  * git add cordovum/platforms/ios
+  * update build_hockey.sh with the workspace
 
 ### Getting To Know Cordovum
 

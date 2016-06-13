@@ -124,14 +124,14 @@ module.exports = function (grunt) {
             }
         },
         add_plugins: {
-        options: {
-            command: 'plugin',
-            action: 'add',
-            plugins: [
-                'file',
-            ]
-        }
-    },
+            options: {
+                command: 'plugin',
+                action: 'add',
+                plugins: [
+                    'file',
+                ]
+            }
+        },
     },
     // Web server to test against
     connect: {
@@ -206,6 +206,6 @@ grunt.registerTask('cordova', [ 'clean:prep', 'jshint', 'sass', 'copy', 'cordova
 /* Task to rebuild device packages */
 grunt.registerTask('release', [ 'clean:all', 'sass', 'copy', 'cordovacli:cordova', 'cordovacli:build' ]);
 /* Initial Setup Task - Create Cordova App and add ios and android */
-grunt.registerTask('setup', [ 'cordovacli:create', 'cordovacli:add_platforms' ]);
+grunt.registerTask('setup', [ 'cordovacli:create', 'cordovacli:add_platforms', 'cordovacli:add_plugins' ]);
 
 };

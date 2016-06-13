@@ -187,6 +187,11 @@ define(['jquery','imgcache'], function($, ImageCache){
     		return this.slice(-str.length) === str;
   		};
 	}
+	if (typeof String.prototype.capitalizeFirstLetter !== 'function') {
+		String.prototype.capitalizeFirstLetter = function() {
+    		return this.charAt(0).toUpperCase() + this.slice(1);
+		};
+	}
 	
 	return utils;
 });

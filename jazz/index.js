@@ -17,7 +17,7 @@ CordovumGenerator.prototype.askFor = function askFor() {
   // have Yeoman greet the user.
   console.log(this.yeoman);
 
-  var prompts = [ { name: 'siloName', message: 'What Silo would you like to test ? ', default: 'Silo'},
+  var prompts = [ { name: 'siloName', message: 'What Silo would you like to test ? ', default: 'silo'},
                   { name: 'apiUrl', message: 'What is the Rest api endpoint? ', default: 'silos/'}
                 ];
 
@@ -31,7 +31,7 @@ CordovumGenerator.prototype.askFor = function askFor() {
 
 CordovumGenerator.prototype.silo = function silo() {
 
-  this.copy('_jazz.js', 'app/tests/' + this.siloName + '.js');
+  this.copy('_jazz.js', 'app/modules/' + this.siloName + '/test_' + this.siloName + '.js');
 
 };
 
@@ -39,7 +39,7 @@ CordovumGenerator.prototype.addJasmineSpec = function addJasmineSpec() {
   var hook   = '/*** Yeoman Placeholder ***/',
       path   = 'app/require.jasmine.js',
       file   = this.readFileAsString(path),
-      insert = "    specs.push('tests/" + this.siloName + "');\n" + hook;
+      insert = "    specs.push('modules/" + this.siloName + "/test_" + this.siloName + "');\n" + hook;
 
   if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, insert));
